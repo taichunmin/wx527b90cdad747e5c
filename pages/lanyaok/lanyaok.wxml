@@ -1,0 +1,1 @@
+<l-status bgColor="f3f3f3" bindtap="lintap" buttonText="新手请点这里查看常见问题" describe="数据写入成功,可以去游戏里刷卡啦" fullScreen="true" show="true" type="success"></l-status>

@@ -1,0 +1,117 @@
+<content-title describe="Common Questions" name="设备连接失败原因">
+    <view class="card-top">
+        <view class="card-dot"></view>
+        <view class="content-name">请检查以下设置</view>
+    </view>
+    <l-card plaintext lClass="card" title="小程序向智能扣写入数据，需要满足以下三个条件，缺一不可。" type="primary">
+        <view class="content">
+            <view> 条件1：手机开启了定位和蓝牙</view>
+            <view> 条件2：应用权限里给微信授权了<text style="color: red;">位置信息</text>
+            </view>
+            <view>条件3：在小程序里授权了蓝牙使用权限</view>
+            <view>条件4：智能扣的指示灯在闪烁状态(如果不亮，按下按钮)，如果长亮或者按了不亮，点小程序首页右下角的说明书看问题5和问题6</view>
+        </view>
+    </l-card>
+    <view class="card-top">
+        <view class="card-dot"></view>
+        <view class="content-name">步骤1.开启手机蓝牙及定位</view>
+    </view>
+    <l-card plaintext lClass="card" title="在安卓手机上开启蓝牙和位置信息的方法：" type="primary">
+        <view class="content">
+            <view>开启蓝牙：</view>
+            <view>1. 打开手机的“设置”应用。</view>
+            <view>2. 在设置中，找到“连接与共享”或“蓝牙设置”（不同手机型号可能有所不同）。</view>
+            <view>3. 点击“蓝牙”，然后开启蓝牙开关。这样，蓝牙功能就被激活了。</view>
+            <view>开启位置信息：</view>
+            <view>1. 打开手机的“设置”应用。</view>
+            <view>2. 在设置中，找到“位置信息”或“位置设置”（不同手机型号可能有所不同）。</view>
+            <view>3. 点击“位置信息”或“位置设置”，然后开启位置开关。这样，位置信息功能就被激活了。</view>
+            <view>另外，你还可以从手机的快速设置面板直接开启蓝牙和位置信息。通常，只需从屏幕顶部下滑即可访问快速设置面板。在快速设置面板中，你会看到蓝牙和位置信息的图标。点击相应的图标即可开启或关闭这些功能。</view>
+        </view>
+    </l-card>
+    <l-card plaintext lClass="card" title="在iPhone上开启蓝牙和位置信息的方法:" type="primary">
+        <view class="content">
+            <view>开启蓝牙：</view>
+            <view>1. 打开手机的“设置”应用。</view>
+            <view>2. 在设置中，找到并点击“蓝牙”选项。</view>
+            <view>3. 在“蓝牙”设置中，打开蓝牙开关。这样，蓝牙功能就被激活了。</view>
+            <view>开启位置信息：</view>
+            <view>1. 打开手机的“设置”应用。</view>
+            <view>2. 在设置中，找到并点击“隐私”选项。</view>
+            <view>3. 在“隐私”设置中，点击“定位服务”。</view>
+            <view>4. 打开“定位服务”开关。这样，位置信息功能就被激活了。</view>
+            <view>此外，你还可以通过控制中心快速开启或关闭蓝牙和位置信息。要访问控制中心，请根据你的iPhone型号执行以下操作：</view>
+            <view>- 对于iPhone X或更高版本：从屏幕右上角向下滑动。</view>
+            <view>- 对于iPhone 8或更低版本：从屏幕底部向上滑动。</view>
+            <view>在控制中心中，你会看到蓝牙和定位服务的图标。点击相应的图标即可开启或关闭这些功能。</view>
+        </view>
+    </l-card>
+    <view class="card-top">
+        <view class="card-dot"></view>
+        <view class="content-name">步骤2：应用设置里面给微信权限：位置信息和附近的设备</view>
+    </view>
+    <l-card plaintext lClass="card" title="iPhone设置微信的位置权限步骤" type="primary">
+        <view class="content">
+            <view> 1. 打开手机的“设置”应用。</view>
+            <view> 2. 向下滚动并找到“微信”选项，点击进入。</view>
+            <view> 3. 在“微信”设置中，点击“位置”或“定位服务”选项。</view>
+            <view> 4. 然后选择“在使用应用期间”或“始终”，根据你的需求授权微信访问位置信息。</view>
+        </view>
+    </l-card>
+    <l-card plaintext lClass="card" title="安卓设置微信的位置权限步骤" type="primary">
+        <view class="content">
+            <view> 1. 打开手机的“设置”应用。</view>
+            <view> 2. 在设置中，找到“应用和通知”或“应用管理”或“权限管理”（不同手机型号可能有所不同）。</view>
+            <view> 3. 点击“微信”，进入微信应用的详细设置。</view>
+            <view> 4. 在微信设置中，点击“权限”或“应用权限”。</view>
+            <view> 5. 找到“位置”选项，然后打开相应的开关，以允许微信访问<text style="color: red;">位置信息和附近的设备</text>。</view>
+        </view>
+    </l-card>
+    <view class="card-top">
+        <view class="card-dot"></view>
+        <view class="content-name">在小程序设置里面，选择允许使用蓝牙</view>
+    </view>
+    <l-card plaintext lClass="card" title="小程序内设置流程：" type="primary">
+        <view class="content">
+            点小程序右上角三个小点，最下方选择设置，蓝牙选项选择为：使用小程序时允许
+        </view>
+    </l-card>
+    <view class="card-top">
+        <view class="card-dot"></view>
+        <view class="content-name">修改权限后，需要关闭微信重新进入：</view>
+    </view>
+    <l-card plaintext lClass="card" title="重启微信后生效" type="primary">
+        <view class="content">
+            <view> 对于 iPhone 用户：</view>
+            <view> 滑动屏幕底部向上，打开多任务视图。</view>
+            <view> 向上滑动微信，关闭应用。</view>
+            <view> 点击主屏幕微信图标，重新打开。</view>
+            <view> 对于 Android 用户：</view>
+            <view> 点击底部任务管理键，或向上滑动打开最近应用列表。</view>
+            <view> 向上滑动微信，关闭应用。</view>
+            <view> 点击主屏幕微信图标，重新打开。</view>
+        </view>
+    </l-card>
+    <view class="card-top">
+        <view class="card-dot"></view>
+        <view class="content-name">重新添加小程序：</view>
+    </view>
+    <l-card plaintext lClass="card" title="如果还不行，可以尝试删除小程序重新添加" type="primary">
+        <view class="content">
+            <view> 在微信，下拉小程序列表，选择小程序，长按，删除它
+然后重新添加小程序试试</view>
+        </view>
+    </l-card>
+    <view class="card-top">
+        <view class="card-dot"></view>
+        <view class="content-name">如果还有问题的话：</view>
+    </view>
+    <l-card plaintext lClass="card" title="最后一步" type="primary">
+        <view class="content">
+            <view> 如果以上步骤都检查没问题，仍然无法写入数据，可以将智能扣电池取出（怎么取电池，可以取首页，点说明书看问题4），等待10秒后，重新安装后试一下。(亲测有效，重装电池大法好)</view>
+            <view> 如果还不行的话，重启一下手机试试。</view>
+            <view> 如果继续不好使，找朋友家人的手机打开小程序试试。</view>
+            <view> 如果最后还没有连上，非常抱歉给您带来了不便。这个应该是商品质量问题，建议您联系淘宝客服申请退货退款。您的订单中已经包含了运费险，所以您不需要承担任何运费成本。抱歉给亲添麻烦了！</view>
+        </view>
+    </l-card>
+</content-title>

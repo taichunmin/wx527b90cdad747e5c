@@ -1,0 +1,25 @@
+page {
+    background-color: #f7f7f7;
+}
+
+.box {
+    margin: 20rpx;
+}
+
+.l-class {
+    line-height: 1.5;
+}
+
+.shuomingtxt {
+    color: #007bff;
+    font-size: small;
+    line-height: 1.8;
+}
+
+.wenti {
+    color: #333;
+}
+
+.red {
+    color: red;
+}

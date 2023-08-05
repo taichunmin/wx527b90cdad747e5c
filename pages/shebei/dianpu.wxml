@@ -1,0 +1,13 @@
+<content-title describe="Authorized Stores" name="Amiibo智能扣官方授权店铺">
+    <view class="container">
+        <view class="text-wrapper">
+            <text>尊敬的客户，为了保证您购买到的Amiibo智能扣产品具有高品质、正品保障以及完善的售后服务，请务必在以下官方授权店铺进行购买。这些授权店铺经过严格的审核和认证，可以为您提供正品和专业的服务。</text>
+        </view>
+        <view class="shop-list-title">
+            <text>官方授权店铺名单：</text>
+        </view>
+        <view class="image-wrapper">
+            <image mode="aspectFit" src="https://cdn.nshome.cn/dianpu.jpg"></image>
+        </view>
+    </view>
+</content-title>

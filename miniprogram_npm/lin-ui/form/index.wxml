@@ -1,0 +1,14 @@
+<view class="l-form-container-class">
+    <slot></slot>
+</view>
+<view class="l-form-btn-class">
+    <slot name="submit-front"></slot>
+    <view capture-bind:tap="submit" class="l-form-submit-class">
+        <slot name="submit"></slot>
+    </view>
+    <slot name="reset-front"></slot>
+    <view capture-bind:tap="reset" class="l-form-reset-class">
+        <slot name="reset"></slot>
+    </view>
+    <slot name="reset-behind"></slot>
+</view>

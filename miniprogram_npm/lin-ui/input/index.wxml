@@ -1,0 +1,22 @@
+<label class="form-item {{disabled?'disabled':''}} l-class form-item-{{labelLayout}}" style="width:{{width===null?'auto':width+'rpx'}}">
+    <view class="mask" wx:if="{{disabled}}"></view>
+    <view class="row l-row-class" hidden="{{showRow?'':'hidden'}}" style="width:{{width===null?'100%':width+'rpx'}}"></view>
+    <view class="form-label l-label-class form-label-{{labelLayout}}" hidden="{{hideLabel}}" style="{{labelLayout!=='top'?'width:'+labelWidth+'rpx;':''}} height:{{labelLayout==='top'?labelWidth+'rpx':''}}" wx:if="{{label&&!labelCustom}}">
+        <text>
+            <text class="text-require" wx:if="{{required}}">* </text>{{label}}<text wx:if="{{colon}}">：</text>
+        </text>
+    </view>
+    <view class="form-label l-label-class form-label-{{labelLayout}}" hidden="{{hideLabel}}" style="{{labelLayout!=='top'?'width:'+labelWidth+'rpx;':''}} height:{{labelLayout==='top'?labelWidth+'rpx':''}}" wx:else>
+        <slot name="left"></slot>
+    </view>
+    <input adjustPosition="{{adjustPosition}}" bindblur="handleInputBlur" bindconfirm="handleInputConfirm" bindfocus="handleInputFocus" bindinput="handleInputChange" class="input {{hideLabel?'hideLabel':''}} l-input-class" disabled="{{disabled}}" focus="{{focus}}" maxlength="{{maxlength}}" placeholder="{{placeholder}}" placeholderClass="pls-class" placeholderStyle="{{placeholderStyle}}" type="{{type}}" value="{{value}}" wx:if="{{type!=='password'}}"></input>
+    <input adjustPosition="{{adjustPosition}}" bindblur="handleInputBlur" bindconfirm="handleInputConfirm" bindfocus="handleInputFocus" bindinput="handleInputChange" class="input {{hideLabel?'hideLabel':''}} l-input-class" disabled="{{disabled}}" focus="{{focus}}" maxlength="{{maxlength}}" password="{{true}}" placeholder="{{placeholder}}" placeholderClass="pls-class" placeholderStyle="{{placeholderStyle}}" value="{{value}}" wx:else></input>
+    <l-icon catch:tap="onTapEyeIcon" lClass="l-eye l-eye-{{type}}" name="eye" size="40" wx:if="{{showEye&&value}}"></l-icon>
+    <view class="close" mut-bind:tap="onClearTap" wx:if="{{clear&&value}}">
+        <view class="close-icon">
+            <l-icon color="#fff" name="close" size="16"></l-icon>
+        </view>
+    </view>
+    <slot name="right"></slot>
+    <l-error-tip errorText="{{errorText}}" lErrorTextClass="l-error-text l-error-text-class" wx:if="{{errorText}}"></l-error-tip>
+</label>

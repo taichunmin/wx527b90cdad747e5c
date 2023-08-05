@@ -1,0 +1,57 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/game/game",
+        "pages/shebei/shebei",
+        "pages/shoucang/shoucang",
+        "pages/amiibolist/amiibolist",
+        "pages/amiibo/amiibo",
+        "pages/lanyaok/lanyaok",
+        "pages/lanyaok/lanyano",
+        "pages/lanyaok/nochangjian",
+        "pages/shebei/moshi",
+        "pages/shebei/jihuo",
+        "pages/shebei/dianpu",
+        "pages/lanyaok/shouhou",
+        "pages/shebei/daoban"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "阿米波助手",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "custom": true,
+        "color": "#bbbbbb",
+        "selectedColor": "#3963BC",
+        "backgroundColor": "#ffffff",
+        "borderStyle": "white",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "游戏",
+                "iconPath": "image/game.png",
+                "selectedIconPath": "image/game-select.png"
+            },
+            {
+                "pagePath": "pages/shebei/shebei",
+                "text": "设备",
+                "iconPath": "image/shebei.png",
+                "selectedIconPath": "image/shebei-select.png"
+            },
+            {
+                "pagePath": "pages/game/game",
+                "text": "读取",
+                "iconPath": "image/nfc.png",
+                "selectedIconPath": "image/nfc-select.png"
+            },
+            {
+                "pagePath": "pages/shoucang/shoucang",
+                "text": "收藏",
+                "iconPath": "image/shoucang.png",
+                "selectedIconPath": "image/shoucang-select.png"
+            }
+        ]
+    }
+}

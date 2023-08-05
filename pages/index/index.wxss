@@ -1,0 +1,36 @@
+page {
+    background-color: #f7f7f7;
+}
+
+.content {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    color: #666;
+    display: -webkit-box;
+    font-size: 26rpx;
+    margin-top: 10rpx;
+    overflow: visible;
+    text-overflow: ellipsis;
+}
+
+.card {
+    margin: 15rpx auto!important;
+}
+
+.custom-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.custom-img {
+    height: 120rpx;
+    margin-right: 20rpx;
+    width: 120rpx;
+}
+
+.custom-txt {
+    color: #bbb;
+    font-size: 28rpx;
+}

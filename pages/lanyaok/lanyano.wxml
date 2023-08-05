@@ -1,0 +1,1 @@
+<l-status bgColor="f3f3f3" bind:lintap="view" buttonText="查看解决办法" describe="{{txt}}" fullScreen="true" show="true" type="error"></l-status>

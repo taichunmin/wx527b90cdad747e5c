@@ -1,0 +1,44 @@
+.l-status-container {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content {
+    background: #fff;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.ad-img {
+    height: 204rpx!important;
+    width: 198rpx!important;
+}
+
+.top-img {
+    height: 204rpx;
+    width: 264rpx;
+}
+
+.left-img {
+    height: 184rpx;
+    width: 120rpx;
+}
+
+.image_margin_top {
+    margin-top: -250rpx;
+}
+
+.status-text {
+    color: #45526b;
+    font-size: 30rpx;
+    margin-top: 40rpx;
+}
+
+.button_margin_top {
+    margin-top: 80rpx;
+}

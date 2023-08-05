@@ -1,0 +1,12 @@
+.grid-item {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 32rpx 16rpx;
+}
+
+.l-gird-item-hover {
+    opacity: .8;
+}

@@ -1,0 +1,49 @@
+.box {
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+}
+
+.title {
+    font-weight: 700;
+    text-align: center;
+}
+
+.title,.title2 {
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.title2 {
+    text-align: left;
+    white-space: pre-wrap;
+}
+
+.l-form-item {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.l-input-container-class {
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 0 10px;
+}
+
+.submit-btn {
+    background-color: #1aad19;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.btn-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}

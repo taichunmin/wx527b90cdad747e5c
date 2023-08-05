@@ -1,0 +1,45 @@
+.lu-tab-bar {
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    bottom: 0;
+    display: flex;
+    height: 106rpx;
+    left: 0;
+    padding-bottom: env(safe-area-inset-bottom)!important;
+    position: fixed;
+    right: 0;
+    width: 750rpx;
+    z-index: 9999;
+}
+
+.lu-tab-bar__item-wrapper {
+    height: 100%;
+    padding-bottom: env(safe-area-inset-bottom)!important;
+}
+
+.lu-tab-bar__item-container,.lu-tab-bar__item-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.lu-tab-bar__item-container {
+    align-items: center;
+    flex-direction: column;
+}
+
+.lu-tab-bar__item-image {
+    display: block;
+    height: 52rpx;
+    width: 52rpx;
+}
+
+.lu-tab-bar__item-text {
+    font-size: 24rpx;
+    line-height: 1;
+    margin-top: 4rpx;
+}
+
+.lu-tab-bar__item-text--selected {
+    color: #3963bc;
+}

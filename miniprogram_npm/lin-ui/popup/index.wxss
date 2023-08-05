@@ -1,0 +1,392 @@
+.popup-fade-center-active-show {
+    animation: popup-center-fadein .3s forwards;
+}
+
+.popup-fade-center-active-hide {
+    animation: popup-center-fadeout .3s forwards;
+}
+
+.popup-fade-top-active-show {
+    animation: popup-top-fadein .3s forwards;
+}
+
+.popup-fade-top-active-hide {
+    animation: popup-top-fadeout .3s forwards;
+}
+
+.popup-fade-left-active-show {
+    animation: popup-left-fadein .3s forwards;
+}
+
+.popup-fade-left-active-hide {
+    animation: popup-left-fadeout .3s forwards;
+}
+
+.popup-fade-right-active-show {
+    animation: popup-right-fadein .3s forwards;
+}
+
+.popup-fade-right-active-hide {
+    animation: popup-right-fadeout .3s forwards;
+}
+
+.popup-fade-bottom-active-show {
+    animation: popup-bottom-fadein .3s forwards;
+}
+
+.popup-fade-bottom-active-hide {
+    animation: popup-bottom-fadeout .3s forwards;
+}
+
+@-webkit-keyframes popup-top-fadein {
+    0% {
+        opacity: 0;
+        transform: translate3d(0,-100%,0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+}
+
+@keyframes popup-top-fadein {
+    0% {
+        opacity: 0;
+        transform: translate3d(0,-100%,0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+}
+
+@-webkit-keyframes popup-top-fadeout {
+    0% {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+
+    100% {
+        opacity: .1;
+        transform: translate3d(0,-100%,0);
+    }
+}
+
+@keyframes popup-top-fadeout {
+    0% {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+
+    100% {
+        opacity: .1;
+        transform: translate3d(0,-100%,0);
+    }
+}
+
+@-webkit-keyframes popup-left-fadein {
+    0% {
+        opacity: 0;
+        transform: translate3d(-100%,0,0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+}
+
+@keyframes popup-left-fadein {
+    0% {
+        opacity: 0;
+        transform: translate3d(-100%,0,0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+}
+
+@-webkit-keyframes popup-left-fadeout {
+    0% {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+
+    100% {
+        opacity: .1;
+        transform: translate3d(-100%,0,0);
+    }
+}
+
+@keyframes popup-left-fadeout {
+    0% {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+
+    100% {
+        opacity: .1;
+        transform: translate3d(-100%,0,0);
+    }
+}
+
+@-webkit-keyframes popup-right-fadein {
+    0% {
+        opacity: 0;
+        transform: translate3d(100%,0,0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+}
+
+@keyframes popup-right-fadein {
+    0% {
+        opacity: 0;
+        transform: translate3d(100%,0,0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+}
+
+@-webkit-keyframes popup-right-fadeout {
+    0% {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+
+    100% {
+        opacity: .1;
+        transform: translate3d(100%,0,0);
+    }
+}
+
+@keyframes popup-right-fadeout {
+    0% {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+
+    100% {
+        opacity: .1;
+        transform: translate3d(100%,0,0);
+    }
+}
+
+@-webkit-keyframes popup-bottom-fadein {
+    0% {
+        opacity: 0;
+        transform: translate3d(0,100%,0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+}
+
+@keyframes popup-bottom-fadein {
+    0% {
+        opacity: 0;
+        transform: translate3d(0,100%,0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+}
+
+@-webkit-keyframes popup-bottom-fadeout {
+    0% {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+
+    100% {
+        opacity: .1;
+        transform: translate3d(0,100%,0);
+    }
+}
+
+@keyframes popup-bottom-fadeout {
+    0% {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+
+    100% {
+        opacity: .1;
+        transform: translate3d(0,100%,0);
+    }
+}
+
+@-webkit-keyframes popup-center-fadein {
+    0% {
+        opacity: 0;
+        transform: scale(.8);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes popup-center-fadein {
+    0% {
+        opacity: 0;
+        transform: scale(.8);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes popup-center-fadeout {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(.8);
+    }
+}
+
+@keyframes popup-center-fadeout {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(.8);
+    }
+}
+
+@-webkit-keyframes bg-fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes bg-fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes bg-fadeout {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes bg-fadeout {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.container-popup {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+.container-bg-show {
+    animation: bg-fadein .3s forwards;
+}
+
+.container-bg-hide {
+    animation: bg-fadeout .3s forwards;
+}
+
+.container-bg {
+    background: rgba(0,0,0,.4);
+    bottom: 0;
+    display: block;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 6;
+}
+
+.popup-content {
+    height: 100%;
+    max-width: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+
+.center {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.center,.left,.right {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.right {
+    justify-content: flex-end;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+}

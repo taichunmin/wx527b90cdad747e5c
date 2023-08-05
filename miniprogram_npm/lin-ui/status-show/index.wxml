@@ -1,0 +1,18 @@
+<view class="l-status-container l-class {{fullScreen?'content':''}}" mut-bind:tap="tapStatusShow" style="{{'background:'+bgColor}};{{fullScreen?'align-items:center;':''}}" wx:if="{{show}}">
+    <slot wx:if="{{custom}}"></slot>
+    <block wx:else>
+        <image class="left-img l-image-class {{fullScreen?'image_margin_top':''}}" src="{{image}}" wx:if="{{image}}"></image>
+        <image class="{{type=='success'||type=='error'?'left-img':'top-img'}} {{type=='address'?'ad-img':''}} l-image-class {{fullScreen?'image_margin_top':''}}" src="{{typeImage}}" wx:else></image>
+        <text class="status-text l-describe-class" wx:if="{{describe}}">{{describe}}</text>
+        <text class="status-text l-describe-class" wx:else>{{typeText}}</text>
+        <l-button lClass="l-button-class button_margin_top" wx:if="{{buttonText}}">
+            <view>{{buttonText}}</view>
+        </l-button>
+        <l-button lClass="l-button-class button_margin_top" wx:if="{{!buttonText&&type==='network'}}">
+            <view>重新加载</view>
+        </l-button>
+        <l-button lClass="l-button-class button_margin_top" wx:if="{{!buttonText&&type==='cart'}}">
+            <view>去逛逛</view>
+        </l-button>
+    </block>
+</view>

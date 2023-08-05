@@ -1,0 +1,45 @@
+.container {
+    display: grid;
+}
+
+.vertical {
+    height: 360rpx;
+}
+
+.parent {
+    display: inline-grid;
+    grid-template-columns: repeat(auto-fill);
+}
+
+.child {
+    background-color: #fff;
+    border: 1px solid red;
+    box-sizing: border-box;
+    flex: 0 0 44%;
+    height: 100px;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 4%;
+}
+
+.dimback {
+    background: #000;
+}
+
+.dim {
+    opacity: .6;
+}
+
+.imageContainer {
+    position: relative;
+}
+
+.imageContainer:last-child>.text {
+    color: #fff;
+    font-size: larger;
+    font-weight: 700;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}

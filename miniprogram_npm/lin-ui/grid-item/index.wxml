@@ -1,0 +1,3 @@
+<view class="l-grid-item l-grid-item-class grid-item" hoverClass="{{isHover?'l-gird-item-hover':''}}" hoverStartTime="20" hoverStayTime="50" mut-bind:tap="tapGridItem">
+    <slot></slot>
+</view>
