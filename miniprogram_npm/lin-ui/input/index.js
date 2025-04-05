@@ -1,6 +1,6 @@
-var e = l(require("../core/utils/event-bus.js")), t = l(require("../behaviors/validator")), a = l(require("../behaviors/rules"));
+var e = require("../../../@babel/runtime/helpers/defineProperty"), t = i(require("../core/utils/event-bus.js")), a = i(require("../behaviors/validator")), l = i(require("../behaviors/rules"));
 
-function l(e) {
+function i(e) {
     return e && e.__esModule ? e : {
         default: e
     };
@@ -10,7 +10,7 @@ Component({
     options: {
         multipleSlots: !0
     },
-    behaviors: [ "wx://form-field", t.default, a.default ],
+    behaviors: [ "wx://form-field", a.default, l.default ],
     externalClasses: [ "l-class", "l-label-class", "l-error-text", "l-error-text-class", "l-input-class", "l-row-class" ],
     properties: {
         label: String,
@@ -60,43 +60,42 @@ Component({
         }
     },
     data: {},
-    attached() {},
+    attached: function() {},
     methods: {
-        handleInputChange(t) {
-            const {detail: a = {}} = t, {value: l = ""} = a;
+        handleInputChange: function(e) {
+            var a = e.detail, l = (void 0 === a ? {} : a).value, i = void 0 === l ? "" : l;
             this.setData({
-                value: l
-            }), e.default.emit("lin-form-change-" + this.id, this.id), this.triggerEvent("lininput", t.detail);
+                value: i
+            }), t.default.emit("lin-form-change-" + this.id, this.id), this.triggerEvent("lininput", e.detail);
         },
-        handleInputFocus(e) {
+        handleInputFocus: function(e) {
             this.triggerEvent("linfocus", e.detail);
         },
-        handleInputBlur(t) {
-            this.validatorData({
-                [this.data.name]: t.detail.value
-            }), e.default.emit("lin-form-blur-" + this.id, this.id), this.triggerEvent("linblur", t.detail);
+        handleInputBlur: function(a) {
+            this.validatorData(e({}, this.data.name, a.detail.value)), t.default.emit("lin-form-blur-" + this.id, this.id), 
+            this.triggerEvent("linblur", a.detail);
         },
-        handleInputConfirm(e) {
-            const {detail: t = {}} = e, {value: a = ""} = t;
+        handleInputConfirm: function(e) {
+            var t = e.detail, a = (void 0 === t ? {} : t).value, l = void 0 === a ? "" : a;
             this.setData({
-                value: a
+                value: l
             }), this.triggerEvent("linconfirm", e.detail);
         },
-        onClearTap(e) {
+        onClearTap: function(e) {
             this.setData({
                 value: ""
             }), this.triggerEvent("linclear", e.detail);
         },
-        getValues() {
+        getValues: function() {
             return this.data.value;
         },
-        reset() {
+        reset: function() {
             this.setData({
                 value: ""
             });
         },
-        onTapEyeIcon() {
-            const e = this.data.type;
+        onTapEyeIcon: function() {
+            var e = this.data.type;
             "text" === e ? this.setData({
                 type: "password"
             }) : "password" === e && this.setData({

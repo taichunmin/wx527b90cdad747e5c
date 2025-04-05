@@ -1,14 +1,14 @@
-var e, t = (e = require("../behaviors/scrollCenter")) && e.__esModule ? e : {
+var e, t = require("../../../@babel/runtime/helpers/objectSpread2"), a = (e = require("../behaviors/scrollCenter")) && e.__esModule ? e : {
     default: e
 };
 
 Component({
-    behaviors: [ t.default ],
+    behaviors: [ a.default ],
     externalClasses: [ "l-class-tabs", "l-class-header", "l-class-active", "l-class-content", "l-class-inactive", "l-class-line", "l-class-tabimage", "l-class-header-line", "l-class-icon", "l-tabs-class", "l-header-class", "l-active-class", "l-content-class", "l-inactive-class", "l-line-class", "l-tabimage-class", "l-header-line-class", "l-icon-class", "l-tabpanel-class", "l-badge-class" ],
     relations: {
         "../tabpanel/index": {
             type: "child",
-            linked() {
+            linked: function() {
                 this.initTabs();
             }
         }
@@ -55,62 +55,65 @@ Component({
     },
     observers: {
         activeKey: function(e) {
-            if (!e) return;
-            const t = this.data.tabList.findIndex(t => t.key === e);
-            this.setData({
-                currentIndex: t
-            }, () => {
-                this.data.scrollable && this.queryMultipleNodes();
-            });
+            var t = this;
+            if (e) {
+                var a = this.data.tabList.findIndex(function(t) {
+                    return t.key === e;
+                });
+                this.setData({
+                    currentIndex: a
+                }, function() {
+                    t.data.scrollable && t.queryMultipleNodes();
+                });
+            }
         }
     },
-    ready() {
+    ready: function() {
         this.initTabs();
     },
     methods: {
-        initTabs(e = this.data.activeKey) {
-            let t = this.getRelationNodes("../tabpanel/index");
-            if (t.length > 0) {
-                let a = e, s = this.data.currentIndex;
-                const l = t.map((t, l) => (a = e || 0 !== l ? a : t.data.key, s = t.data.key === a ? l : s, 
-                {
-                    ...t.data
-                }));
+        initTabs: function() {
+            var e = this, a = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : this.data.activeKey, n = this.getRelationNodes("../tabpanel/index");
+            if (n.length > 0) {
+                var s = a, i = this.data.currentIndex, l = n.map(function(e, n) {
+                    return s = a || 0 !== n ? s : e.data.key, i = e.data.key === s ? n : i, t({}, e.data);
+                });
                 this.setData({
                     tabList: l,
-                    activeKey: a,
-                    currentIndex: s
-                }, () => {
-                    this.data.scrollable && this.queryMultipleNodes();
+                    activeKey: s,
+                    currentIndex: i
+                }, function() {
+                    e.data.scrollable && e.queryMultipleNodes();
                 });
             }
         },
-        swiperChange(e) {
-            const {source: t, current: a} = e.detail;
-            if ("touch" === t) {
-                const e = a, t = this.data.tabList[a].key;
+        swiperChange: function(e) {
+            var t = e.detail, a = t.source, n = t.current;
+            if ("touch" === a) {
+                var s = n, i = this.data.tabList[n].key;
                 this._setChangeData({
-                    activeKey: t,
-                    currentIndex: e
+                    activeKey: i,
+                    currentIndex: s
                 });
             }
         },
-        handleChange(e) {
-            const t = e.currentTarget.dataset.key, a = e.currentTarget.dataset.index;
+        handleChange: function(e) {
+            var t = e.currentTarget.dataset.key, a = e.currentTarget.dataset.index;
             this._setChangeData({
                 activeKey: t,
                 currentIndex: a
             });
         },
-        _setChangeData({activeKey: e, currentIndex: t}) {
+        _setChangeData: function(e) {
+            var t = this, a = e.activeKey, n = e.currentIndex;
             this.setData({
-                activeKey: e,
-                currentIndex: t
-            }, () => {
-                this.data.scrollable && this.queryMultipleNodes();
+                activeKey: a,
+                currentIndex: n
+            }, function() {
+                t.data.scrollable && t.queryMultipleNodes();
             }), this.triggerEvent("linchange", {
-                activeKey: e,
-                currentIndex: t
+                activeKey: a,
+                currentIndex: n
             });
         }
     }

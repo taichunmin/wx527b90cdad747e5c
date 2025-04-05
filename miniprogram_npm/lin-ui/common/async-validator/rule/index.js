@@ -10,7 +10,7 @@ function s(e) {
     };
 }
 
-var i = {
+exports.default = {
     required: e.default,
     whitespace: r.default,
     type: t.default,
@@ -18,5 +18,3 @@ var i = {
     enum: a.default,
     pattern: d.default
 };
-
-exports.default = i;

@@ -4,13 +4,11 @@
         <l-button bindtap="changjian" icon="help" iconColor="#333" iconSize="30" shape="circle" size="long" type="warning" wx:if="{{device.length==0}}">如果你添加设备一直不成功，点这里</l-button>
     </view>
     <block wx:for="{{device}}" wx:key="id">
-        <l-card data-id="{{item.deviceid}}" image="https://cdn.nshome.cn/{{item.type}}.jpg" imageMode="aspectFit" lClass="card" title="" type="cover">
+        <l-card data-id="{{item.deviceid}}" image="https://newapi.nshome.cn:3001/{{item.type}}.jpg" imageMode="aspectFit" lClass="card" title="" type="cover">
             <view class="content">
                 <l-list desc="{{item.deviceid}}" icon="user" isLink="{{false}}" title="设备ID"></l-list>
                 <l-list desc="Amiibo智能扣三代" icon="WiFi" isLink="{{false}}" title="设备型号" wx:if="{{item.name=='amiibobox'}}"></l-list>
                 <l-list desc="Amiibo智能扣三代" icon="WiFi" isLink="{{false}}" title="设备型号" wx:if="{{item.name=='nfcbox'}}"></l-list>
-                <l-list icon="success" isLink="{{false}}" rightDesc="{{item.createtime}}" title="首次激活日期"></l-list>
-                <l-list icon="time" isLink="{{false}}" rightDesc="{{item.endtime}}" title="硬件保修截止日期"></l-list>
                 <l-list icon="setting" isLink="{{true}}" linkType="navigateTo" title="模式设置" url="/pages/shebei/moshi?deviceid={{item.deviceid}}&type={{item.type}}"></l-list>
                 <l-list bindtap="del_show_btn" icon="delete" isLink="{{true}}" title="解除绑定"></l-list>
             </view>
@@ -24,14 +22,8 @@
 <l-popup locked="true" show="{{load}}">
     <view class="center">
         <l-loading lContainerClass="load" show="true" size="large" type="flash"></l-loading>
-        <view class="txt">
-            正在搜索设备
-
-        </view>
-        <view class="txt">
-
-            请按下设备上的按钮，确保指示灯闪烁
-        </view>
+        <view class="txt"> 正在搜索设备 </view>
+        <view class="txt"> 请按下设备上的按钮，确保指示灯闪烁 </view>
         <l-button bindtap="quxiao" shape="circle" type="default">取消</l-button>
     </view>
 </l-popup>

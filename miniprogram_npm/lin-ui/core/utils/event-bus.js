@@ -1,18 +1,22 @@
-function e() {
+Object.defineProperty(exports, "__esModule", {
+    value: !0
+}), exports.default = void 0;
+
+var e = require("../../../../@babel/runtime/helpers/toConsumableArray");
+
+function s() {
     this.msgQueues = {};
 }
 
-Object.defineProperty(exports, "__esModule", {
-    value: !0
-}), exports.default = void 0, e.prototype = {
-    on: function(e, s) {
-        Object.prototype.hasOwnProperty.call(this.msgQueues, e) ? "function" == typeof this.msgQueues[e] ? this.msgQueues[e] = [ this.msgQueues[e], s ] : this.msgQueues[e] = [ ...this.msgQueues[e], s ] : this.msgQueues[e] = s;
+s.prototype = {
+    on: function(s, t) {
+        Object.prototype.hasOwnProperty.call(this.msgQueues, s) ? "function" == typeof this.msgQueues[s] ? this.msgQueues[s] = [ this.msgQueues[s], t ] : this.msgQueues[s] = [].concat(e(this.msgQueues[s]), [ t ]) : this.msgQueues[s] = t;
     },
     one: function(e, s) {
         this.msgQueues[e] = s;
     },
     emit: function(e, s) {
-        Object.prototype.hasOwnProperty.call(this.msgQueues, e) && ("function" == typeof this.msgQueues[e] ? this.msgQueues[e](s) : this.msgQueues[e].map(e => {
+        Object.prototype.hasOwnProperty.call(this.msgQueues, e) && ("function" == typeof this.msgQueues[e] ? this.msgQueues[e](s) : this.msgQueues[e].map(function(e) {
             e(s);
         }));
     },
@@ -21,6 +25,6 @@ Object.defineProperty(exports, "__esModule", {
     }
 };
 
-var s = new e();
+var t = new s();
 
-exports.default = s;
+exports.default = t;

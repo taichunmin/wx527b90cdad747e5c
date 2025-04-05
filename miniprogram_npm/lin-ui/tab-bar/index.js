@@ -35,34 +35,33 @@ Component({
         }
     },
     methods: {
-        parseCurrentPage() {
-            const e = "/" + getCurrentPages()[0].route, a = this.data.list;
-            let i;
-            for (let t = 0; t < a.length; t++) if (a[t].pagePath === e) {
-                i = t;
+        parseCurrentPage: function() {
+            for (var e, a = "/" + getCurrentPages()[0].route, i = this.data.list, r = 0; r < i.length; r++) if (i[r].pagePath === a) {
+                e = r;
                 break;
             }
-            if (void 0 === i) return;
-            this.setData({
-                selectedIndex: i
-            });
-            const l = this.data.list[i];
-            t.default.emit(this, "linchange", {
-                index: i,
-                item: l
-            });
+            if (void 0 !== e) {
+                this.setData({
+                    selectedIndex: e
+                });
+                var n = this.data.list[e];
+                t.default.emit(this, "linchange", {
+                    index: e,
+                    item: n
+                });
+            }
         },
-        onTapItem(e) {
-            const a = e.currentTarget.dataset.index, i = this.data.list[a].pagePath;
+        onTapItem: function(e) {
+            var a = e.currentTarget.dataset.index, i = this.data.list[a].pagePath;
             t.default.emit(this, "lintap", {
                 index: a,
                 item: this.data.list[a]
             }), i && wx.switchTab({
                 url: i,
-                fail() {
+                fail: function() {
                     wx.navigateTo({
                         url: i,
-                        fail(e) {
+                        fail: function(e) {
                             console.warn("路由跳转错误，错误信息为：", e);
                         }
                     });

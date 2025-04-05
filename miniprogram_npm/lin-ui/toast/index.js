@@ -1,13 +1,13 @@
-var e = o(require("../behaviors/computeOffset")), t = o(require("../behaviors/zIndex")), i = o(require("../behaviors/watchShow"));
+var t = o(require("../behaviors/computeOffset")), e = o(require("../behaviors/zIndex")), i = o(require("../behaviors/watchShow"));
 
-function o(e) {
-    return e && e.__esModule ? e : {
-        default: e
+function o(t) {
+    return t && t.__esModule ? t : {
+        default: t
     };
 }
 
 Component({
-    behaviors: [ e.default, t.default, i.default ],
+    behaviors: [ t.default, e.default, i.default ],
     externalClasses: [ "l-bg-class", "l-icon-class", "l-class", "l-image-class", "l-title-class " ],
     properties: {
         show: {
@@ -55,31 +55,35 @@ Component({
     observers: {
         icon: function() {}
     },
-    attached() {
+    attached: function() {
         this.data.openApi && this.initToast();
     },
     pageLifetimes: {
-        show() {
+        show: function() {
             this.data.openApi && this.initToast(), this.offsetMargin();
         }
     },
     methods: {
-        initToast() {
-            wx.lin = wx.lin || {}, wx.lin.showToast = ((e = {}) => (console.warn("wx.lin 已废弃，请使用开放函数代替：https://doc.mini.talelin.com//start/open-function.html"), 
-            this.linShow(e), this)), wx.lin.hideToast = (() => {
+        initToast: function() {
+            var t = this;
+            wx.lin = wx.lin || {}, wx.lin.showToast = function() {
+                var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
+                return console.warn("wx.lin 已废弃，请使用开放函数代替：https://doc.mini.talelin.com//start/open-function.html"), 
+                t.linShow(e), t;
+            }, wx.lin.hideToast = function() {
                 console.warn("wx.lin 已废弃，请使用开放函数代替：https://doc.mini.talelin.com//start/open-function.html"), 
-                this.linHide();
-            });
+                t.linHide();
+            };
         },
-        strlen(e) {
-            for (var t = 0, i = 0; i < e.length; i++) {
-                var o = e.charCodeAt(i);
-                o >= "0x0001" && o <= "0x007e" || "0xff60" <= o && o <= "0xff9f" ? t++ : t += 2;
+        strlen: function(t) {
+            for (var e = 0, i = 0; i < t.length; i++) {
+                var o = t.charCodeAt(i);
+                o >= "0x0001" && o <= "0x007e" || "0xff60" <= o && o <= "0xff9f" ? e++ : e += 2;
             }
-            return t;
+            return e;
         },
-        doNothingMove() {},
-        onMaskTap() {
+        doNothingMove: function() {},
+        onMaskTap: function() {
             !0 !== this.data.locked && this.setData({
                 fullScreen: "hide",
                 status: "hide"
@@ -88,26 +92,26 @@ Component({
                 composed: !0
             });
         },
-        linShow(e) {
-            e || (e = {});
-            const {title: t = "", icon: i = "", image: o = "", placement: s = "bottom", duration: n = 1500, center: a = !0, mask: l = !1, success: r = null, complete: c = null, offsetX: u = 0, offsetY: h = 0, iconSize: f = "60", iconColor: p = ""} = e;
+        linShow: function(t) {
+            t || (t = {});
+            var e = t, i = e.title, o = void 0 === i ? "" : i, n = e.icon, a = void 0 === n ? "" : n, s = e.image, l = void 0 === s ? "" : s, c = e.placement, r = void 0 === c ? "bottom" : c, u = e.duration, f = void 0 === u ? 1500 : u, d = e.center, h = void 0 === d || d, v = e.mask, p = void 0 !== v && v, m = e.success, g = void 0 === m ? null : m, b = e.complete, w = void 0 === b ? null : b, S = e.offsetX, x = void 0 === S ? 0 : S, y = e.offsetY, C = void 0 === y ? 0 : y, T = e.iconSize, k = void 0 === T ? "60" : T, z = e.iconColor, N = void 0 === z ? "" : z;
             this.setData({
-                title: t,
-                icon: i,
-                image: o,
-                placement: s,
-                duration: n,
-                center: a,
-                mask: l,
-                success: r,
-                complete: c,
-                offsetY: h,
-                offsetX: u,
-                iconSize: f,
-                iconColor: p
+                title: o,
+                icon: a,
+                image: l,
+                placement: r,
+                duration: f,
+                center: h,
+                mask: p,
+                success: g,
+                complete: w,
+                offsetY: C,
+                offsetX: x,
+                iconSize: k,
+                iconColor: N
             }), this.changeStatus();
         },
-        linHide() {
+        linHide: function() {
             this.setData({
                 status: !1
             });

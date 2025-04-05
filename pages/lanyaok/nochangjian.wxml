@@ -72,9 +72,7 @@
         <view class="content-name">在小程序设置里面，选择允许使用蓝牙</view>
     </view>
     <l-card plaintext lClass="card" title="小程序内设置流程：" type="primary">
-        <view class="content">
-            点小程序右上角三个小点，最下方选择设置，蓝牙选项选择为：使用小程序时允许
-        </view>
+        <view class="content"> 点小程序右上角三个小点，最下方选择设置，蓝牙选项选择为：使用小程序时允许 </view>
     </l-card>
     <view class="card-top">
         <view class="card-dot"></view>

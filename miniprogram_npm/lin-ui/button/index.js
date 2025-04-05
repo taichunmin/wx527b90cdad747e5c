@@ -72,14 +72,14 @@ Component({
         }
     },
     methods: {
-        handleTap() {
+        handleTap: function() {
             if (this.data.disabled || this.data.loading) return !1;
             this.triggerEvent("lintap", {}, {
                 bubbles: !0,
                 composed: !0
             });
         },
-        openTypeEvent(e) {
+        openTypeEvent: function(e) {
             this.triggerEvent(e.type, e.detail, {});
         }
     }

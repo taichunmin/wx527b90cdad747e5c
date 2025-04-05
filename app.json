@@ -13,7 +13,8 @@
         "pages/shebei/jihuo",
         "pages/shebei/dianpu",
         "pages/lanyaok/shouhou",
-        "pages/shebei/daoban"
+        "pages/shebei/daoban",
+        "pages/taobao/taobao"
     ],
     "window": {
         "backgroundTextStyle": "light",

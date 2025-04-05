@@ -10,10 +10,10 @@ Component({
     relations: {
         "../grid-item/index": {
             type: "child",
-            linked() {
+            linked: function() {
                 this.initGrids();
             },
-            unlinked() {
+            unlinked: function() {
                 this.initGrids();
             }
         }
@@ -34,36 +34,39 @@ Component({
         currentIndex: -1,
         currentCell: -1
     },
-    ready() {
+    ready: function() {
         this.initGrids();
     },
     lifetimes: {
-        show() {}
+        show: function() {}
     },
     methods: {
-        initGrids() {
-            let e = this.getRelationNodes("../grid-item/index");
-            if (this.data.childNum === e.length) return;
-            const t = e.map((e, t) => (e.setData({
-                index: t
-            }), {
-                index: t,
-                key: e.data.key,
-                cell: e.data.cell
-            }));
-            this.setData({
-                gridItems: t,
-                childNum: e.length
-            });
+        initGrids: function() {
+            var e = this.getRelationNodes("../grid-item/index");
+            if (this.data.childNum !== e.length) {
+                var t = e.map(function(e, t) {
+                    return e.setData({
+                        index: t
+                    }), {
+                        index: t,
+                        key: e.data.key,
+                        cell: e.data.cell
+                    };
+                });
+                this.setData({
+                    gridItems: t,
+                    childNum: e.length
+                });
+            }
         },
-        tapGridItem(e) {
-            const {gridIndex: t} = e.target.dataset;
+        tapGridItem: function(e) {
+            var t = e.target.dataset.gridIndex;
             this.setData({
                 currentIndex: t,
                 currentCell: this.data.gridItems[t].cell
             });
         },
-        tapGrid() {
+        tapGrid: function() {
             this.triggerEvent("lintap", {
                 index: this.data.currentIndex,
                 cell: this.data.currentCell

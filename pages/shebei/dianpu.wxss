@@ -34,3 +34,25 @@ image {
     max-width: 500px;
     width: 100%;
 }
+
+.table {
+    display: block;
+    width: 100%;
+}
+
+.table-header,.table-row {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.table-header {
+    font-weight: 700;
+}
+
+.cell {
+    flex: 1;
+    text-align: center;
+}

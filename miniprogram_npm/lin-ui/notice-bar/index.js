@@ -1,4 +1,4 @@
-var t, i = (t = require("../core/utils/node-util")) && t.__esModule ? t : {
+var t, e = require("../../../@babel/runtime/helpers/objectSpread2"), i = require("../../../@babel/runtime/helpers/regeneratorRuntime"), n = require("../../../@babel/runtime/helpers/asyncToGenerator"), a = (t = require("../core/utils/node-util")) && t.__esModule ? t : {
     default: t
 };
 
@@ -62,53 +62,72 @@ Component({
         animation: null,
         timer: null
     },
-    detached() {
+    detached: function() {
         this.destroyTimer();
     },
-    ready() {
+    ready: function() {
         "roll" === this.properties.type && this.properties.show && this.initAnimation();
     },
     methods: {
-        async initAnimation() {
-            const t = await i.default.getNodeRectFromComponent(this, ".l-noticebar-content"), a = await i.default.getNodeRectFromComponent(this, ".l-noticebar-content-wrap"), e = t.width / 40 * this.data.speed, n = wx.createAnimation({
-                duration: e,
-                timingFunction: "linear"
-            });
-            this.setData({
-                wrapWidth: a.width,
-                width: t.width,
-                duration: e,
-                animation: n
-            }, () => {
-                this.startAnimation();
-            });
+        initAnimation: function() {
+            var t = this;
+            return n(i().mark(function e() {
+                var n, r, o, s;
+                return i().wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return e.next = 2, a.default.getNodeRectFromComponent(t, ".l-noticebar-content");
+
+                      case 2:
+                        return n = e.sent, e.next = 5, a.default.getNodeRectFromComponent(t, ".l-noticebar-content-wrap");
+
+                      case 5:
+                        r = e.sent, o = n.width / 40 * t.data.speed, s = wx.createAnimation({
+                            duration: o,
+                            timingFunction: "linear"
+                        }), t.setData({
+                            wrapWidth: r.width,
+                            width: n.width,
+                            duration: o,
+                            animation: s
+                        }, function() {
+                            t.startAnimation();
+                        });
+
+                      case 9:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e);
+            }))();
         },
-        startAnimation() {
+        startAnimation: function() {
+            var t = this;
             if (0 !== this.data.animation.option.transition.duration) {
                 this.data.animation.option.transition.duration = 0;
-                const t = this.data.animation.translateX(this.data.wrapWidth).step();
+                var e = this.data.animation.translateX(this.data.wrapWidth).step();
                 this.setData({
-                    animationData: t.export()
+                    animationData: e.export()
                 });
             }
             this.data.animation.option.transition.duration = this.data.duration;
-            const t = this.data.animation.translateX(-this.data.width).step();
-            setTimeout(() => {
-                this.setData({
-                    animationData: t.export()
+            var i = this.data.animation.translateX(-this.data.width).step();
+            setTimeout(function() {
+                t.setData({
+                    animationData: i.export()
                 });
             }, 100);
-            const i = setTimeout(() => {
-                this.startAnimation();
+            var n = setTimeout(function() {
+                t.startAnimation();
             }, this.data.duration);
             this.setData({
-                timer: i
+                timer: n
             });
         },
-        destroyTimer() {
+        destroyTimer: function() {
             this.data.timer && clearTimeout(this.data.timer);
         },
-        handleTap() {
+        handleTap: function() {
             this.triggerEvent("lintap", {}, {
                 bubbles: !0,
                 composed: !0
@@ -116,15 +135,13 @@ Component({
                 timer: null
             });
         },
-        onSwip(t) {
-            this.triggerEvent("lintap", {
-                ...t.currentTarget.dataset
-            }, {
+        onSwip: function(t) {
+            this.triggerEvent("lintap", e({}, t.currentTarget.dataset), {
                 bubbles: !0,
                 composed: !0
             });
         },
-        onIconTap() {
+        onIconTap: function() {
             this.triggerEvent("linicontap", {}, {
                 bubbles: !0,
                 composed: !0
@@ -132,13 +149,13 @@ Component({
                 timer: null
             });
         },
-        onClose() {
+        onClose: function() {
             this.setData({
                 timer: null,
                 show: !1
             });
         },
-        linFlush() {
+        linFlush: function() {
             this.destroyTimer(), this.initAnimation();
         }
     }

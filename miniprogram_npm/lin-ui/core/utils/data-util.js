@@ -2,13 +2,18 @@ Object.defineProperty(exports, "__esModule", {
     value: !0
 }), exports.default = void 0;
 
-var e = new class {
-    setDiffData(e, t) {
-        const s = {};
-        Object.keys(t).forEach(a => {
-            e.data[a] !== t[a] && (s[a] = t[a]);
-        }), Object.keys(s).length && e.setData(s);
-    }
-}();
+var e = require("../../../../@babel/runtime/helpers/classCallCheck"), t = require("../../../../@babel/runtime/helpers/createClass"), r = new (function() {
+    return t(function t() {
+        e(this, t);
+    }, [ {
+        key: "setDiffData",
+        value: function(e, t) {
+            var r = {};
+            Object.keys(t).forEach(function(a) {
+                e.data[a] !== t[a] && (r[a] = t[a]);
+            }), Object.keys(r).length && e.setData(r);
+        }
+    } ]);
+}())();
 
-exports.default = e;
+exports.default = r;

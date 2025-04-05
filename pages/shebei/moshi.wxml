@@ -1,35 +1,35 @@
 <l-dialog bind:linconfirm="set" content="该模式是实验性功能，目前还不十分稳定。有几率使用一段时间后，游戏里面刷卡就没有反应了。遇到这种情况，可以将模式设置为第一个【无限模式(手动)】，并重新写入数据，按下按钮，即可解决。" data-id="4" show="{{auto_show}}" showTitle="{{true}}" title="无限模式(自动)" type="confirm"></l-dialog>
 <content-title describe="Set Mode" name="模式设置">
     <content-card lContent="content" name="请点击选择要使用的模式">
-        <l-card bindtap="set" data-id="1" image="https://cdn.nshome.cn/mod1.jpg" lClass="card" title="无限模式（手动）" type="avatar">
+        <l-card bindtap="set" data-id="1" image="https://newapi.nshome.cn:3001/mod1.jpg" lClass="card" title="无限模式（手动）" type="avatar">
             <view class="content">
                 <view>塞尔达动森等大部分游戏都应该选择这个模式</view>
                 <view>同时保存1个数据，后写入的数据会覆盖之前写入的。</view>
                 <view>按钮的作用：按下后重新生成一张新卡，在旷野之息里面可以无限刷。</view>
             </view>
         </l-card>
-        <l-card bindtap="set" data-id="2" image="https://cdn.nshome.cn/mod2.jpg" lClass="card" title="按序模式" type="avatar">
+        <l-card bindtap="set" data-id="2" image="https://newapi.nshome.cn:3001/mod2.jpg" lClass="card" title="按序模式" type="avatar">
             <view class="content">
                 <view>只有喷射战士和任天堂明星大乱斗需要选择这个模式</view>
                 <view>同时保存26个数据，写满后，新写入的会替换最早的数据</view>
                 <view>按钮的作用：在26个数据直接循环切换</view>
             </view>
         </l-card>
-        <l-card bindtap="set" data-id="3" image="https://cdn.nshome.cn/mod3.jpg" lClass="card" title="读写模式" type="avatar" wx:if="{{type=='kou'}}">
+        <l-card bindtap="set" data-id="3" image="https://newapi.nshome.cn:3001/mod3.jpg" lClass="card" title="读写模式" type="avatar" wx:if="{{type=='kou'}}">
             <view class="content">
                 <view>模拟一个空白的NFC卡，可以用第三方软件写入(大部分人用不到这个功能)</view>
                 <view>同时保存1个数据</view>
                 <view>按钮的作用：无效</view>
             </view>
         </l-card>
-        <l-card bindtap="auto_show_btn" data-id="4" image="https://cdn.nshome.cn/mod4.jpg" lClass="card" title="无限模式（自动）" type="avatar" wx:if="{{type=='kou2'}}">
+        <l-card bindtap="auto_show_btn" data-id="4" image="https://newapi.nshome.cn:3001/mod4.jpg" lClass="card" title="无限模式（自动）" type="avatar" wx:if="{{type=='kou2'}}">
             <view class="content">
                 <view>塞尔达旷野之息刷宝箱专用模式</view>
                 <view>同时保存1个数据，后写入的数据会覆盖之前写入的。</view>
                 <view>每秒自动重新生成一张新卡，在旷野之息里面可以无限刷。</view>
             </view>
         </l-card>
-        <l-card bindtap="set" data-id="5" image="https://cdn.nshome.cn/mod5.jpg" lClass="card" title="恢复出厂设置" type="avatar" wx:if="{{type=='kou2'}}">
+        <l-card bindtap="set" data-id="5" image="https://newapi.nshome.cn:3001/mod5.jpg" lClass="card" title="恢复出厂设置" type="avatar" wx:if="{{type=='kou2'}}">
             <view class="content">
                 <view>如果你遇到了一些莫名其妙的问题，可以尝试恢复出厂设置</view>
                 <view>恢复出厂设置后，需要重新写入数据</view>
@@ -39,14 +39,8 @@
     <l-popup locked="true" show="{{load}}">
         <view class="center">
             <l-loading lContainerClass="load" show="true" size="large" type="flash"></l-loading>
-            <view class="txt">
-            正在搜索设备
-
-        </view>
-            <view class="txt">
-
-            请按下设备上的按钮，确保指示灯闪烁
-        </view>
+            <view class="txt"> 正在搜索设备 </view>
+            <view class="txt"> 请按下设备上的按钮，确保指示灯闪烁 </view>
             <l-button bindtap="quxiao" shape="circle" type="default">取消</l-button>
         </view>
     </l-popup>

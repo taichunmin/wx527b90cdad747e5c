@@ -2,23 +2,21 @@ Object.defineProperty(exports, "__esModule", {
     value: !0
 }), exports.default = void 0;
 
-var e = Behavior({
+exports.default = Behavior({
     behaviors: [],
     properties: {},
     data: {
         distance: 0
     },
-    attached() {
+    attached: function() {
         this.offsetMargin();
     },
     methods: {
-        offsetMargin() {
-            const {windowHeight: e, screenHeight: t} = wx.getSystemInfoSync();
+        offsetMargin: function() {
+            var e = wx.getSystemInfoSync(), t = e.windowHeight, s = e.screenHeight;
             this.setData({
-                distance: t - e
+                distance: s - t
             });
         }
     }
 });
-
-exports.default = e;

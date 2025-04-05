@@ -1,13 +1,13 @@
-var e = s(require("../behaviors/computeOffset")), t = s(require("../behaviors/zIndex")), o = s(require("../behaviors/hover")), l = s(require("../behaviors/validator"));
+var t = n(require("../behaviors/computeOffset")), e = n(require("../behaviors/zIndex")), o = n(require("../behaviors/hover")), i = n(require("../behaviors/validator"));
 
-function s(e) {
-    return e && e.__esModule ? e : {
-        default: e
+function n(t) {
+    return t && t.__esModule ? t : {
+        default: t
     };
 }
 
 Component({
-    behaviors: [ e.default, t.default, o.default, l.default ],
+    behaviors: [ t.default, e.default, o.default, i.default ],
     externalClasses: [ "l-class", "l-title-class", "l-content-class", "l-confirm-class", "l-cancel-class", "l-bg-class" ],
     properties: {
         show: {
@@ -65,24 +65,25 @@ Component({
         success: null,
         fail: null
     },
-    attached() {
+    attached: function() {
         this.data.openApi && this.initDialog();
     },
     pageLifetimes: {
-        show() {
+        show: function() {
             this.data.openApi && this.initDialog();
         }
     },
     methods: {
-        initDialog() {
-            wx.lin = wx.lin || {}, wx.lin.showDialog = (e => {
+        initDialog: function() {
+            var t = this;
+            wx.lin = wx.lin || {}, wx.lin.showDialog = function(e) {
                 console.warn("wx.lin 方法已废弃，请使用开放函数代替 https://doc.mini.talelin.com/start/open-function.html"), 
-                this.linShow(e);
-            });
+                t.linShow(e);
+            };
         },
-        onConfirmTap() {
-            const {success: e} = this.data;
-            e && e({
+        onConfirmTap: function() {
+            var t = this.data.success;
+            t && t({
                 confirm: !0,
                 cancel: !1,
                 errMsg: "showDialog: success"
@@ -93,9 +94,9 @@ Component({
                 composed: !0
             });
         },
-        onCancelTap() {
-            const {success: e} = this.data;
-            e && e({
+        onCancelTap: function() {
+            var t = this.data.success;
+            t && t({
                 confirm: !1,
                 cancel: !0,
                 errMsg: "showDialog: success"
@@ -106,7 +107,7 @@ Component({
                 composed: !0
             });
         },
-        onDialogTap() {
+        onDialogTap: function() {
             !0 !== this.data.locked && this.setData({
                 show: !this.data.show
             }), this.triggerEvent("lintap", !0, {
@@ -114,25 +115,25 @@ Component({
                 composed: !0
             });
         },
-        linShow(e) {
-            const {type: t = "alert", title: o = "提示", showTitle: l = !0, content: s = "", locked: a = !0, confirmText: i = "确定", contentColor: n = "rgba(89,108,142,1)", cancelColor: c = "#45526b", cancelText: r = "取消", confirmColor: h = "#3683d6", success: u = null, fail: p = null} = e;
+        linShow: function(t) {
+            var e = t.type, o = void 0 === e ? "alert" : e, i = t.title, n = void 0 === i ? "提示" : i, l = t.showTitle, a = void 0 === l || l, s = t.content, c = void 0 === s ? "" : s, r = t.locked, u = void 0 === r || r, h = t.confirmText, d = void 0 === h ? "确定" : h, v = t.contentColor, p = void 0 === v ? "rgba(89,108,142,1)" : v, f = t.cancelColor, g = void 0 === f ? "#45526b" : f, m = t.cancelText, w = void 0 === m ? "取消" : m, b = t.confirmColor, y = void 0 === b ? "#3683d6" : b, C = t.success, x = void 0 === C ? null : C, D = t.fail, T = void 0 === D ? null : D;
             this.setData({
-                type: t,
-                title: o,
-                showTitle: l,
-                content: s,
-                locked: a,
-                confirmText: i,
-                cancelColor: c,
-                cancelText: r,
-                confirmColor: h,
-                contentColor: n,
+                type: o,
+                title: n,
+                showTitle: a,
+                content: c,
+                locked: u,
+                confirmText: d,
+                cancelColor: g,
+                cancelText: w,
+                confirmColor: y,
+                contentColor: p,
                 show: !0,
-                fail: p,
-                success: u
+                fail: T,
+                success: x
             });
         },
-        linHide() {
+        linHide: function() {
             this.setData({
                 show: !0
             });

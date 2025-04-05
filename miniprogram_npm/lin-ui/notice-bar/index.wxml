@@ -1,9 +1,7 @@
 <view class="l-class l-noticebar" style="color: {{color}}; background-color: {{backgroundcolor}}" wx:if="{{show}}">
     <l-icon class="l-noticebar-icon" color="{{frontIconColor}}" lClass="l-icon-class" name="{{frontIconName}}" size="{{frontIconSize}}" wx:if="{{frontIconName}}"></l-icon>
     <swiper autoplay vertical class="l-noticebar-content-wrap" interval="{{4*speed}}" wx:if="{{type=='swip'}}">
-        <swiper-item data-index="{{index}}" mut-bind:tap="onSwip" wx:for="{{swipArr}}" wx:key="swip">
-        {{item}}
-      </swiper-item>
+        <swiper-item data-index="{{index}}" mut-bind:tap="onSwip" wx:for="{{swipArr}}" wx:key="swip"> {{item}} </swiper-item>
     </swiper>
     <view class="l-noticebar-content-wrap l-noticebar-content-wrap-view" wx:else>
         <view animation="{{animationData}}" class="l-noticebar-content" mut-bind:tap="handleTap">

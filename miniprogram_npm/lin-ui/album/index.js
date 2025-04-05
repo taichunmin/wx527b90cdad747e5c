@@ -1,3 +1,5 @@
+var e = require("../../../@babel/runtime/helpers/typeof");
+
 Component({
     externalClasses: [ "l-class", "l-single-image-class", "l-multi-image-class" ],
     properties: {
@@ -65,60 +67,59 @@ Component({
         }
     },
     methods: {
-        init() {
-            let {urls: e, maxNumber: t, key: a} = this.data;
-            if (e.length > t && (e = e.slice(0, t), this.setData({
+        init: function() {
+            var e = this.data, t = e.urls, a = e.maxNumber, i = e.key;
+            if (t.length > a && (t = t.slice(0, a), this.setData({
                 isLong: !0
             })), this.setData({
-                showUrls: e
+                showUrls: t
             }), !this.data.customRowNumber) {
-                let e = this.data.showUrls.length;
-                e > 1 && e < 5 && 3 !== e ? this.setData({
+                var r = this.data.showUrls.length;
+                r > 1 && r < 5 && 3 !== r ? this.setData({
                     everyRowNumber: 2
                 }) : this.setData({
                     everyRowNumber: 3
                 });
             }
-            const s = this.judgeType();
+            var s = this.judgeType();
             this.setData({
                 newType: s
-            }), 1 === e.length && this.horizontalOrVertical(s ? e[0][a] : e[0]);
+            }), 1 === t.length && this.horizontalOrVertical(s ? t[0][i] : t[0]);
         },
-        judgeType() {
-            const e = this.data.urls;
-            return 0 === e.length || "object" == typeof e[0];
+        judgeType: function() {
+            var t = this.data.urls;
+            return 0 === t.length || "object" == e(t[0]);
         },
         horizontalOrVertical: function(e) {
+            var t = this;
             wx.getImageInfo({
                 src: e,
-                success: e => {
-                    const t = e.width >= e.height ? e.width : e.height, a = e.width >= e.height ? e.height : e.width;
-                    this.setData({
+                success: function(e) {
+                    var a = e.width >= e.height ? e.width : e.height, i = e.width >= e.height ? e.height : e.width;
+                    t.setData({
                         horizontalScreen: e.width >= e.height,
-                        shortSideValue: a * this.data.singleSize / t
+                        shortSideValue: i * t.data.singleSize / a
                     });
                 }
             });
         },
-        onPreviewTap(e) {
-            const t = e.currentTarget.id;
-            let a;
-            a = this.data.previewFullImage ? this.data.urls : this.data.showUrls;
-            let s = "", i = [];
-            const l = this.data.newType, r = this.data.key;
-            if (l) {
-                s = a[t][r];
-                for (let e = 0; e < a.length; e++) i.push(a[e][r]);
-            } else s = a[t], i = a;
-            let u = {
-                index: t,
-                current: a[t],
-                all: a
+        onPreviewTap: function(e) {
+            var t, a = e.currentTarget.id;
+            t = this.data.previewFullImage ? this.data.urls : this.data.showUrls;
+            var i = "", r = [], s = this.data.newType, l = this.data.key;
+            if (s) {
+                i = t[a][l];
+                for (var u = 0; u < t.length; u++) r.push(t[u][l]);
+            } else i = t[a], r = t;
+            var h = {
+                index: a,
+                current: t[a],
+                all: t
             };
             !0 === this.data.preview && wx.previewImage({
-                current: s,
-                urls: i
-            }), this.triggerEvent("lintap", u, {});
+                current: i,
+                urls: r
+            }), this.triggerEvent("lintap", h, {});
         }
     }
 });

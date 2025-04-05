@@ -7,9 +7,9 @@ Component({
     relations: {
         "../list/index": {
             type: "parent",
-            linked() {},
-            linkChanged() {},
-            unlinked() {}
+            linked: function() {},
+            linkChanged: function() {},
+            unlinked: function() {}
         }
     },
     options: {
@@ -70,9 +70,9 @@ Component({
     },
     methods: {
         tapcell: function(e) {
-            const {linkType: t, url: l} = e.currentTarget.dataset;
-            l && wx[t]({
-                url: l
+            var t = e.currentTarget.dataset, l = t.linkType, n = t.url;
+            n && wx[l]({
+                url: n
             }), this.triggerEvent("lintap", {
                 e: e
             }, {

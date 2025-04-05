@@ -1,13 +1,13 @@
-var t = n(require("../behaviors/zIndex")), e = n(require("../behaviors/validator")), i = n(require("../core/utils/event-util")), o = n(require("../core/behaviors/doNothingBehavior"));
+var t = require("../../../@babel/runtime/helpers/objectSpread2"), e = a(require("../behaviors/zIndex")), i = a(require("../behaviors/validator")), n = a(require("../core/utils/event-util")), o = a(require("../core/behaviors/doNothingBehavior"));
 
-function n(t) {
+function a(t) {
     return t && t.__esModule ? t : {
         default: t
     };
 }
 
 Component({
-    behaviors: [ t.default, e.default, o.default ],
+    behaviors: [ e.default, i.default, o.default ],
     externalClasses: [ "l-bg-class", "l-panel-class", "l-class" ],
     properties: {
         show: {
@@ -37,11 +37,11 @@ Component({
             value: !1
         }
     },
-    attached() {
+    attached: function() {
         this._init();
     },
     pageLifetimes: {
-        show() {
+        show: function() {
             this._init();
         }
     },
@@ -49,30 +49,32 @@ Component({
         status: "hide"
     },
     observers: {
-        show(t) {
+        show: function(t) {
             t && this.setData({
                 status: "show"
             });
         }
     },
     methods: {
-        _init() {
-            wx.lin = wx.lin || {}, wx.lin.showPopup = (t => {
+        _init: function() {
+            var t = this;
+            wx.lin = wx.lin || {}, wx.lin.showPopup = function(e) {
                 console.warn("wx.lin 方法已废弃，请使用开放函数代替 https://doc.mini.talelin.com/start/open-function.html"), 
-                this.linShow(t);
-            }), wx.lin.hidePopup = (() => {
+                t.linShow(e);
+            }, wx.lin.hidePopup = function() {
                 console.warn("wx.lin 方法已废弃，请使用开放函数代替 https://doc.mini.talelin.com/start/open-function.html"), 
-                this.linHide();
-            });
+                t.linHide();
+            };
         },
-        onPopupTap() {
-            !0 !== this.data.locked && this._hidePopup(), i.default.emit(this, "lintap");
+        onPopupTap: function() {
+            !0 !== this.data.locked && this._hidePopup(), n.default.emit(this, "lintap");
         },
-        _hidePopup() {
+        _hidePopup: function() {
+            var t = this;
             this.data.animation ? (this.setData({
                 status: "hide"
-            }), setTimeout(() => {
-                this.setData({
+            }), setTimeout(function() {
+                t.setData({
                     show: !1
                 });
             }, 300)) : this.setData({
@@ -80,19 +82,17 @@ Component({
                 status: "hide"
             });
         },
-        linShow(t) {
-            const {zIndex: e = 99, animation: i = !0, contentAlign: o = "center", locked: n = !1} = {
-                ...t
-            };
+        linShow: function(e) {
+            var i = t({}, e), n = i.zIndex, o = void 0 === n ? 99 : n, a = i.animation, s = void 0 === a || a, l = i.contentAlign, u = void 0 === l ? "center" : l, r = i.locked, h = void 0 !== r && r;
             this.setData({
-                zIndex: e,
-                animation: i,
-                contentAlign: o,
-                locked: n,
+                zIndex: o,
+                animation: s,
+                contentAlign: u,
+                locked: h,
                 show: !0
             });
         },
-        linHide() {
+        linHide: function() {
             this._hidePopup();
         }
     }

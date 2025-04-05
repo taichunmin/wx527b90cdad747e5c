@@ -4,15 +4,13 @@ Object.defineProperty(exports, "__esModule", {
 
 var e, r = (e = require("../rule/index.js")) && e.__esModule ? e : {
     default: e
-}, t = require("../util");
+}, u = require("../util");
 
-var u = function(e, u, i, d, l) {
-    const s = e.type, a = [];
+exports.default = function(e, t, i, d, l) {
+    var a = e.type, s = [];
     if (e.required || !e.required && d.hasOwnProperty(e.field)) {
-        if ((0, t.isEmptyValue)(u, s) && !e.required) return i();
-        r.default.required(e, u, d, a, l, s), (0, t.isEmptyValue)(u, s) || r.default.type(e, u, d, a, l);
+        if ((0, u.isEmptyValue)(t, a) && !e.required) return i();
+        r.default.required(e, t, d, s, l, a), (0, u.isEmptyValue)(t, a) || r.default.type(e, t, d, s, l);
     }
-    i(a);
+    i(s);
 };
-
-exports.default = u;

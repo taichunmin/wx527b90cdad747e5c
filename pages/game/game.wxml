@@ -6,22 +6,13 @@
             <view class="shuomingtxt">
                 <text space="pre">小程序向智能扣写入数据，需要满足以下三个条件，缺一不可。
                         条件1：手机开启了定位和蓝牙
-                        条件2：应用权限里给微信授权了<text class="red">位置信息</text>
-                        条件3：在小程序里授权了蓝牙使用权限
-                        改完权限后，需要关闭微信重新进入
-                        如果还行，下拉小程序列表，选择小程序，长按，删除它，然后重新添加小程序试试
-                        如果还不行，你可以尝试把电池取出来，等10秒再装上
-                    </text>
+                        条件2：应用权限里给微信授权了<text class="red">位置信息</text> 条件3：在小程序里授权了蓝牙使用权限 改完权限后，需要关闭微信重新进入 如果还行，下拉小程序列表，选择小程序，长按，删除它，然后重新添加小程序试试 如果还不行，你可以尝试把电池取出来，等10秒再装上 </text>
             </view>
         </l-collapse-item>
         <l-collapse-item title="2.为什么游戏里面刷卡没有反应？">
             <view class="shuomingtxt">
                 <text space="pre">智能扣刷卡注意事项：
-                    有灯的一面（也就是有<text class="red">按钮</text>的一面）<text class="red">朝下</text>，（因为电池是金属的，有电池的一面朝下会影响信号接收）
-                    按钮对准放在joycon的 <text class="red">home键</text>上刷。不要放摇杆上。
-                    要用原厂的joycon，pro手柄刷智能扣会不灵敏，<text class="red">很多国产pro手柄都不兼容</text>
-                    另外游戏里面要进入刷卡界面，不同游戏操作不一样，比如刷塞尔达旷野之息，需要地上有光圈才可以
-                </text>
+                    有灯的一面（也就是有<text class="red">按钮</text>的一面）<text class="red">朝下</text>，（因为电池是金属的，有电池的一面朝下会影响信号接收） 按钮对准放在joycon的 <text class="red">home键</text>上刷。不要放摇杆上。 要用原厂的joycon，pro手柄刷智能扣会不灵敏，<text class="red">很多国产pro手柄都不兼容</text> 另外游戏里面要进入刷卡界面，不同游戏操作不一样，比如刷塞尔达旷野之息，需要地上有光圈才可以 </text>
             </view>
         </l-collapse-item>
         <l-collapse-item title="3.怎么清除智能扣中的数据">
@@ -29,17 +20,10 @@
         </l-collapse-item>
         <l-collapse-item title="4.怎么打开后盖更换电池？">
             <text class="shuomingtxt">电池后盖打开方法：
-                1、请务必朝左方向<text class="red">（逆时针）</text>拧动电池盖子。记住，左拧开，右拧紧。
-                2、<text class="red">不要对着箭头的方向拧，箭头是代表关。</text>
-                3、当您感觉到电池盖子松动时，轻轻地将其取下即可更换电池。
-                4、避免朝右方向（顺时针）拧动电池盖子，否则可能导致盖子过紧，难以拆卸
-            </text>
+                1、请务必朝左方向<text class="red">（逆时针）</text>拧动电池盖子。记住，左拧开，右拧紧。 2、<text class="red">不要对着箭头的方向拧，箭头是代表关。</text> 3、当您感觉到电池盖子松动时，轻轻地将其取下即可更换电池。 4、避免朝右方向（顺时针）拧动电池盖子，否则可能导致盖子过紧，难以拆卸 </text>
         </l-collapse-item>
         <l-collapse-item title="5.灯不亮了该怎么办？">
-            <text class="shuomingtxt">如果灯不亮的话，有可能是电池松了，取出来<text class="red">重新安装</text>就好了。
-                如果还不行，可以装入备用电池试试。
-                电池是纽扣电池，如果自己买电池，搜关键词：CR2032
-            </text>
+            <text class="shuomingtxt">如果灯不亮的话，有可能是电池松了，取出来<text class="red">重新安装</text>就好了。 如果还不行，可以装入备用电池试试。 电池是纽扣电池，如果自己买电池，搜关键词：CR2032 </text>
         </l-collapse-item>
         <l-collapse-item title="6.灯长亮该怎么办？">
             <text class="shuomingtxt">灯如果长亮，可以尝试以下步骤：
@@ -83,8 +67,7 @@
             <view class="shuomingtxt">
                 <text space="pre">如果刷卡提示：“今天已经刷过该amiibo”
                     有两个原因：
-                    1.刷卡后没有按下按钮，刷一次卡出宝箱后，要按下智能扣上的按钮，重新生成一张新卡，才能继续再刷。流程就是刷卡，开宝箱，<text class="red">按按钮</text>，再刷卡,<text class="red">再按按钮</text>。如果你按了还提示，可能是没按成功，如果按了好几次还是这个提示，那就是模式设置错了。
-                    2. 刷旷野之息，要把模式设置成无限模式。在小程序里面设备，模式设置，选<text class="red">无限模式</text>
+                    1.刷卡后没有按下按钮，刷一次卡出宝箱后，要按下智能扣上的按钮，重新生成一张新卡，才能继续再刷。流程就是刷卡，开宝箱，<text class="red">按按钮</text>，再刷卡,<text class="red">再按按钮</text>。如果你按了还提示，可能是没按成功，如果按了好几次还是这个提示，那就是模式设置错了。 2. 刷旷野之息，要把模式设置成无限模式。在小程序里面设备，模式设置，选<text class="red">无限模式</text>
                 </text>
             </view>
         </l-collapse-item>
@@ -120,32 +103,20 @@
 </content-card>
 <content-card lContent="content" name="塞尔达旷野之息常见问题">
     <l-collapse type="accordion">
-        <l-collapse-item title="1.旷野之息怎么开启刷amiibo？">
-
-            只要打过新手村的第一个神庙就可以开启amiibo功能。
-            塞尔达amiibo卡刷卡步骤：
-            <view>1、第一次刷卡需要开启：进入游戏按【加号】切换到系统→选项→使用amiibo</view>
+        <l-collapse-item title="1.旷野之息怎么开启刷amiibo？"> 只要打过新手村的第一个神庙就可以开启amiibo功能。 塞尔达amiibo卡刷卡步骤： <view>1、第一次刷卡需要开启：进入游戏按【加号】切换到系统→选项→使用amiibo</view>
             <view>2、在游戏中找一块空地，按【上键】，切换道具为amiibo</view>
             <view>3、按左手柄【L键】地上出现一个光圈（如果出现一个X，换个平坦一点的地方就可以了）</view>
             <view>4、把买到的amiibo卡放在home键上静止等待宝箱掉落就可以哦</view>
         </l-collapse-item>
-        <l-collapse-item title="2.为什么刷卡的时候会有叮咚一声提示音？">
-            旷野之息出现叮咚一声的提示，代表刷的不是正常的amiibo，通常是因为你没有写入数据或者写入数据失败，重新写入就可以了。
-        </l-collapse-item>
+        <l-collapse-item title="2.为什么刷卡的时候会有叮咚一声提示音？"> 旷野之息出现叮咚一声的提示，代表刷的不是正常的amiibo，通常是因为你没有写入数据或者写入数据失败，重新写入就可以了。 </l-collapse-item>
         <l-collapse-item title="3.为什么我地上不出现光圈，一直是一个X？">
             <view> 刷amiibo的时候要选择一个空旷的平地，如果你身边有东西或者地不平，就会出现X</view>
             <view> 如果你开启了飞行模式，也会出现一个X，需要去游戏机主页，设置，飞行模式，里面的选项选择：开启NFC。刷amiibo不需要联网，但是需要开启Switch的NFC功能。</view>
             <view> 如果你使用的不是原装手柄，用了不支持NFC功能的手柄也会出这个提示，换成原厂joycon就可以了。</view>
         </l-collapse-item>
-        <l-collapse-item title="4.林克狼为什么提示此处无法使用？">
-            林克狼如果刷卡，提示此处无法使用，就是字面意思，换个地方就好了。狼不能在村里使用，换个野外平地就可以了。要去一个狼能走到的地方，陡坡，水坑，村里都不行。
-        </l-collapse-item>
-        <l-collapse-item title="5.我刷大乱斗林克的卡一直出马不出宝箱？">
-            在平地刷卡，就是必定出马。去马走不到的地方（比如沙漠），刷出来就是宝箱，有几率出黄昏勇者套装。
-        </l-collapse-item>
-        <l-collapse-item title="6.我为什么一直都刷不出来黄昏弓？">
-            有一些限定道具，是需要一定游戏进度才可以刷出来，比如如果你没打过神兽，就刷不到黄昏弓，具体的掉落表和前置条件每个amiibo页面都有有详细介绍，亲可以参考一下
-        </l-collapse-item>
+        <l-collapse-item title="4.林克狼为什么提示此处无法使用？"> 林克狼如果刷卡，提示此处无法使用，就是字面意思，换个地方就好了。狼不能在村里使用，换个野外平地就可以了。要去一个狼能走到的地方，陡坡，水坑，村里都不行。 </l-collapse-item>
+        <l-collapse-item title="5.我刷大乱斗林克的卡一直出马不出宝箱？"> 在平地刷卡，就是必定出马。去马走不到的地方（比如沙漠），刷出来就是宝箱，有几率出黄昏勇者套装。 </l-collapse-item>
+        <l-collapse-item title="6.我为什么一直都刷不出来黄昏弓？"> 有一些限定道具，是需要一定游戏进度才可以刷出来，比如如果你没打过神兽，就刷不到黄昏弓，具体的掉落表和前置条件每个amiibo页面都有有详细介绍，亲可以参考一下 </l-collapse-item>
         <l-collapse-item title="7.为什么提示：“今天已经刷过该amiibo”">
             <view>有两个原因：</view>
             <view> 1.刷卡后没有按下按钮，刷一次卡出宝箱后，要按下智能扣上的按钮，重新生成一张新卡，才能继续再刷。如果你按了还提示，可能是没按成功，如果按了好几次还是这个提示，那就是模式设置错了。</view>
@@ -159,15 +130,9 @@
 </content-card>
 <content-card lContent="content" name="动物森友会常见问题">
     <l-collapse type="accordion">
-        <l-collapse-item title="1.房车卡有什么用，小动物开车来吗?">
-            有50个房车卡在switch上也是刷小动物出来定居，功能和小动物一样的。房车卡不能刷出来房车，也刷不出来家具，只有邀请小动物定居、露营、买海报的功能。游戏里没有车，房车卡只是卡的编号，游戏里功能一样的。
-        </l-collapse-item>
-        <l-collapse-item title="2.怎么获得三丽欧主题家具？">
-            三丽欧的六个卡，刷卡后可以解锁主题家具，去ATM的nook购物订购就可以。
-        </l-collapse-item>
-        <l-collapse-item title="3.刷amiibo需要岛上有空地吗？">
-            不需要有空地，满了10个直接可以替换，没满就是新增村名
-        </l-collapse-item>
+        <l-collapse-item title="1.房车卡有什么用，小动物开车来吗?"> 有50个房车卡在switch上也是刷小动物出来定居，功能和小动物一样的。房车卡不能刷出来房车，也刷不出来家具，只有邀请小动物定居、露营、买海报的功能。游戏里没有车，房车卡只是卡的编号，游戏里功能一样的。 </l-collapse-item>
+        <l-collapse-item title="2.怎么获得三丽欧主题家具？"> 三丽欧的六个卡，刷卡后可以解锁主题家具，去ATM的nook购物订购就可以。 </l-collapse-item>
+        <l-collapse-item title="3.刷amiibo需要岛上有空地吗？"> 不需要有空地，满了10个直接可以替换，没满就是新增村名 </l-collapse-item>
     </l-collapse>
 </content-card>
 <content-card lContent="content" name="喷射战士和大乱斗常见问题">

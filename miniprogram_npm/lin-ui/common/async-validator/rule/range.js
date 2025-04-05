@@ -2,37 +2,33 @@ Object.defineProperty(exports, "__esModule", {
     value: !0
 }), exports.default = void 0;
 
-var e = function(e) {
-    if (e && e.__esModule) return e;
+var e = function(e, t) {
+    if (!t && e && e.__esModule) return e;
     if (null === e || "object" != typeof e && "function" != typeof e) return {
         default: e
     };
-    var t = r();
-    if (t && t.has(e)) return t.get(e);
-    var n = {}, u = Object.defineProperty && Object.getOwnPropertyDescriptor;
-    for (var a in e) if (Object.prototype.hasOwnProperty.call(e, a)) {
-        var l = u ? Object.getOwnPropertyDescriptor(e, a) : null;
-        l && (l.get || l.set) ? Object.defineProperty(n, a, l) : n[a] = e[a];
+    var n = r(t);
+    if (n && n.has(e)) return n.get(e);
+    var u = {}, a = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for (var l in e) if ("default" !== l && Object.prototype.hasOwnProperty.call(e, l)) {
+        var f = a ? Object.getOwnPropertyDescriptor(e, l) : null;
+        f && (f.get || f.set) ? Object.defineProperty(u, l, f) : u[l] = e[l];
     }
-    n.default = e, t && t.set(e, n);
-    return n;
+    u.default = e, n && n.set(e, u);
+    return u;
 }(require("../util"));
 
-function r() {
+function r(e) {
     if ("function" != typeof WeakMap) return null;
-    var e = new WeakMap();
-    return r = function() {
-        return e;
-    }, e;
+    var t = new WeakMap(), n = new WeakMap();
+    return (r = function(e) {
+        return e ? n : t;
+    })(e);
 }
 
-var t = function(r, t, n, u, a) {
-    const l = "number" == typeof r.len, o = "number" == typeof r.min, f = "number" == typeof r.max;
-    let i = t, s = null;
-    const p = "number" == typeof t, m = "string" == typeof t, c = Array.isArray(t);
+exports.default = function(r, t, n, u, a) {
+    var l = "number" == typeof r.len, f = "number" == typeof r.min, o = "number" == typeof r.max, i = t, s = null, p = "number" == typeof t, m = "string" == typeof t, c = Array.isArray(t);
     if (p ? s = "number" : m ? s = "string" : c && (s = "array"), !s) return !1;
     c && (i = t.length), m && (i = t.replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, "_").length), 
-    l ? i !== r.len && u.push(e.format(a.messages[s].len, r.fullField, r.len)) : o && !f && i < r.min ? u.push(e.format(a.messages[s].min, r.fullField, r.min)) : f && !o && i > r.max ? u.push(e.format(a.messages[s].max, r.fullField, r.max)) : o && f && (i < r.min || i > r.max) && u.push(e.format(a.messages[s].range, r.fullField, r.min, r.max));
+    l ? i !== r.len && u.push(e.format(a.messages[s].len, r.fullField, r.len)) : f && !o && i < r.min ? u.push(e.format(a.messages[s].min, r.fullField, r.min)) : o && !f && i > r.max ? u.push(e.format(a.messages[s].max, r.fullField, r.max)) : f && o && (i < r.min || i > r.max) && u.push(e.format(a.messages[s].range, r.fullField, r.min, r.max));
 };
-
-exports.default = t;

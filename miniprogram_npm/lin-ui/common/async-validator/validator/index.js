@@ -10,7 +10,7 @@ function b(e) {
     };
 }
 
-var m = {
+exports.default = {
     string: e.default,
     method: r.default,
     number: u.default,
@@ -28,5 +28,3 @@ var m = {
     email: s.default,
     required: p.default
 };
-
-exports.default = m;

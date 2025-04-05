@@ -6,8 +6,8 @@ var e, r = (e = require("../rule/index.js")) && e.__esModule ? e : {
     default: e
 }, u = require("../util");
 
-var t = function(e, t, a, i, d) {
-    const l = [];
+exports.default = function(e, t, a, i, d) {
+    var l = [];
     if (e.required || !e.required && i.hasOwnProperty(e.field)) {
         if ((0, u.isEmptyValue)(t, "array") && !e.required) return a();
         r.default.required(e, t, i, l, d, "array"), (0, u.isEmptyValue)(t, "array") || (r.default.type(e, t, i, l, d), 
@@ -15,5 +15,3 @@ var t = function(e, t, a, i, d) {
     }
     a(l);
 };
-
-exports.default = t;

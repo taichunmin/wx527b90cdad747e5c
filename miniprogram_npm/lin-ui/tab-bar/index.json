@@ -17,6 +17,5 @@
         "l-tab-bar": "/miniprogram_npm/lin-ui/tab-bar/index",
         "l-tag": "/miniprogram_npm/lin-ui/tag/index",
         "l-toast": "/miniprogram_npm/lin-ui/toast/index"
-    },
-    "__warning__": "无效的 page.json [\"styleIsolation\"]"
+    }
 }

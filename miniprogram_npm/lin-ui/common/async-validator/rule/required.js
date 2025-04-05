@@ -2,32 +2,30 @@ Object.defineProperty(exports, "__esModule", {
     value: !0
 }), exports.default = void 0;
 
-var e = function(e) {
-    if (e && e.__esModule) return e;
+var e = function(e, r) {
+    if (!r && e && e.__esModule) return e;
     if (null === e || "object" != typeof e && "function" != typeof e) return {
         default: e
     };
-    var r = t();
-    if (r && r.has(e)) return r.get(e);
-    var n = {}, u = Object.defineProperty && Object.getOwnPropertyDescriptor;
-    for (var o in e) if (Object.prototype.hasOwnProperty.call(e, o)) {
-        var i = u ? Object.getOwnPropertyDescriptor(e, o) : null;
-        i && (i.get || i.set) ? Object.defineProperty(n, o, i) : n[o] = e[o];
+    var n = t(r);
+    if (n && n.has(e)) return n.get(e);
+    var u = {}, o = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for (var f in e) if ("default" !== f && Object.prototype.hasOwnProperty.call(e, f)) {
+        var i = o ? Object.getOwnPropertyDescriptor(e, f) : null;
+        i && (i.get || i.set) ? Object.defineProperty(u, f, i) : u[f] = e[f];
     }
-    n.default = e, r && r.set(e, n);
-    return n;
+    u.default = e, n && n.set(e, u);
+    return u;
 }(require("../util"));
 
-function t() {
+function t(e) {
     if ("function" != typeof WeakMap) return null;
-    var e = new WeakMap();
-    return t = function() {
-        return e;
-    }, e;
+    var r = new WeakMap(), n = new WeakMap();
+    return (t = function(e) {
+        return e ? n : r;
+    })(e);
 }
 
-var r = function(t, r, n, u, o, i) {
-    !t.required || n.hasOwnProperty(t.field) && !e.isEmptyValue(r, i || t.type) || u.push(e.format(o.messages.required, t.fullField));
+exports.default = function(t, r, n, u, o, f) {
+    !t.required || n.hasOwnProperty(t.field) && !e.isEmptyValue(r, f || t.type) || u.push(e.format(o.messages.required, t.fullField));
 };
-
-exports.default = r;

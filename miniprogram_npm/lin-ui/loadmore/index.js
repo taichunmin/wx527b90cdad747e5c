@@ -1,4 +1,4 @@
-var e, t = (e = require("../behaviors/validator")) && e.__esModule ? e : {
+var e, o = require("../../../@babel/runtime/helpers/objectSpread2"), i = (e = require("../behaviors/validator")) && e.__esModule ? e : {
     default: e
 };
 
@@ -7,7 +7,7 @@ Component({
     options: {
         multipleSlots: !0
     },
-    behaviors: [ t.default ],
+    behaviors: [ i.default ],
     properties: {
         show: Boolean,
         custom: Boolean,
@@ -32,37 +32,36 @@ Component({
         }
     },
     data: {},
-    attached() {
+    attached: function() {
         this._init();
     },
     pageLifetimes: {
-        show() {
+        show: function() {
             this._init();
         }
     },
     methods: {
-        _init() {
-            wx.lin = wx.lin || {}, wx.lin.showLoadmore = (e => {
-                const {custom: t = !1, line: o = !1, color: i = "", size: l = "28", type: s = "loading", endText: a = "我是有底线的", loadingText: n = "加载中..."} = {
-                    ...e
-                };
-                this.setData({
-                    custom: t,
-                    line: o,
-                    color: i,
-                    size: l,
-                    type: s,
-                    endText: a,
-                    loadingText: n,
+        _init: function() {
+            var e = this;
+            wx.lin = wx.lin || {}, wx.lin.showLoadmore = function(i) {
+                var t = o({}, i), n = t.custom, l = void 0 !== n && n, a = t.line, s = void 0 !== a && a, d = t.color, r = void 0 === d ? "" : d, u = t.size, c = void 0 === u ? "28" : u, p = t.type, v = void 0 === p ? "loading" : p, g = t.endText, h = void 0 === g ? "我是有底线的" : g, m = t.loadingText, x = void 0 === m ? "加载中..." : m;
+                e.setData({
+                    custom: l,
+                    line: s,
+                    color: r,
+                    size: c,
+                    type: v,
+                    endText: h,
+                    loadingText: x,
                     show: !0
                 });
-            }), wx.lin.hideLoadmore = (() => {
-                this.setData({
+            }, wx.lin.hideLoadmore = function() {
+                e.setData({
                     show: !1
                 });
-            });
+            };
         },
-        onLoadmore() {
+        onLoadmore: function() {
             this.triggerEvent("lintap", {}, {
                 bubbles: !0,
                 composed: !0

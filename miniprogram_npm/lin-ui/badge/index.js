@@ -1,10 +1,10 @@
-var a, t = (a = require("../behaviors/validator")) && a.__esModule ? a : {
-    default: a
+var t, a = (t = require("../behaviors/validator")) && t.__esModule ? t : {
+    default: t
 };
 
 Component({
     externalClasses: [ "l-class", "l-class-self", "l-self-class" ],
-    behaviors: [ t.default ],
+    behaviors: [ a.default ],
     properties: {
         dot: {
             type: Boolean,
@@ -47,12 +47,12 @@ Component({
         }
     },
     methods: {
-        finalCount() {
+        finalCount: function() {
             isNaN(Number(this.data.value)) || "text" === this.data.mode ? this.setData({
                 finalCount: this.data.value
             }) : this.switchType();
         },
-        switchType() {
+        switchType: function() {
             switch (this.data.numberType) {
               case "overflow":
                 this.setData({
@@ -78,7 +78,7 @@ Component({
                 });
             }
         },
-        handleTap() {
+        handleTap: function() {
             this.triggerEvent("lintap", {}, {
                 bubbles: !0,
                 composed: !0

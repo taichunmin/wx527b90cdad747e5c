@@ -1,0 +1,13 @@
+<view class="page">
+    <l-button bindtap="dianpu" icon="address" iconColor="#fff" iconSize="30" shape="circle" size="long" type="success">点击查看授权店铺</l-button>
+    <scroll-view class="content" scrollY="true">
+        <image class="product-image" mode="widthFix" src="{{item}}" wx:for="{{productImages}}" wx:key="unique"></image>
+    </scroll-view>
+    <view class="footer">
+        <l-button bgColor="#1AAD19" bindtap="goToWeidian">去微店购买</l-button>
+        <l-button bgColor="#fd5f20" bind:lintap="gototaobao">去淘宝购买</l-button>
+    </view>
+    <l-dialog bind:linconfirm="copyToClipboard" confirmText="复制" show="{{showModal}}" showTitle="{{true}}" title="淘口令" type="confirm">
+        <text selectable="true">{{kouling}}</text>
+    </l-dialog>
+</view>

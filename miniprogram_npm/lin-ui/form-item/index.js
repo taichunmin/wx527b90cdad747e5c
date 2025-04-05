@@ -42,13 +42,14 @@ Component({
     data: {
         isRequired: !1
     },
-    attached() {
+    attached: function() {
         this.initRules(), this.isRequired();
     },
     methods: {
-        isRequired() {
-            this.data.rules.forEach(e => {
-                e.required && this.setData({
+        isRequired: function() {
+            var e = this;
+            this.data.rules.forEach(function(t) {
+                t.required && e.setData({
                     isRequired: !0
                 });
             });

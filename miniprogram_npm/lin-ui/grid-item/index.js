@@ -1,4 +1,4 @@
-var e, t = (e = require("../core/utils/data-util")) && e.__esModule ? e : {
+var e, t = require("../../../@babel/runtime/helpers/objectSpread2"), i = (e = require("../core/utils/data-util")) && e.__esModule ? e : {
     default: e
 };
 
@@ -20,10 +20,10 @@ Component({
         index: 0,
         isHover: !0
     },
-    attached() {},
+    attached: function() {},
     observers: {
         key: function() {
-            const e = this.getRelationNodes("../grid/index")[0];
+            var e = this.getRelationNodes("../grid/index")[0];
             e && (e.setData({
                 gridItems: [],
                 childNum: 0
@@ -31,18 +31,16 @@ Component({
         }
     },
     lifetimes: {
-        ready() {
-            const e = this.getRelationNodes("../grid/index")[0];
-            e && t.default.setDiffData(this, {
+        ready: function() {
+            var e = this.getRelationNodes("../grid/index")[0];
+            e && i.default.setDiffData(this, {
                 isHover: e.data.isHover
             });
         }
     },
     methods: {
-        tapGridItem() {
-            this.triggerEvent("linitemtap", {
-                ...this.data
-            }, {
+        tapGridItem: function() {
+            this.triggerEvent("linitemtap", t({}, this.data), {
                 bubbles: !0,
                 composed: !0
             });

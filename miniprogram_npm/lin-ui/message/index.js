@@ -1,6 +1,6 @@
-var e = s(require("../behaviors/zIndex")), t = s(require("../behaviors/watchShow")), i = s(require("../behaviors/validator"));
+var e = a(require("../behaviors/zIndex")), t = a(require("../behaviors/watchShow")), i = a(require("../behaviors/validator"));
 
-function s(e) {
+function a(e) {
     return e && e.__esModule ? e : {
         default: e
     };
@@ -46,31 +46,32 @@ Component({
     observers: {
         icon: function() {}
     },
-    attached() {
+    attached: function() {
         this.initMessage();
     },
     pageLifetimes: {
-        show() {
+        show: function() {
             this.initMessage();
         }
     },
     methods: {
-        initMessage() {
-            wx.lin = wx.lin || {}, wx.lin.showMessage = ((e = {}) => {
-                const {content: t = "", icon: i = "", image: s = "", type: a = "primary", duration: n = 1500, success: r = null, top: o = 0} = e;
-                return this.data.success = r, this.setData({
-                    content: t,
-                    icon: i,
-                    image: s,
-                    duration: n,
-                    type: a,
-                    top: o
-                }), this.changeStatus(), this;
-            }), wx.lin.hideMessage = (() => {
-                this.setData({
+        initMessage: function() {
+            var e = this;
+            wx.lin = wx.lin || {}, wx.lin.showMessage = function() {
+                var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {}, i = t.content, a = void 0 === i ? "" : i, n = t.icon, o = void 0 === n ? "" : n, s = t.image, r = void 0 === s ? "" : s, u = t.type, l = void 0 === u ? "primary" : u, c = t.duration, d = void 0 === c ? 1500 : c, v = t.success, p = void 0 === v ? null : v, g = t.top, h = void 0 === g ? 0 : g;
+                return e.data.success = p, e.setData({
+                    content: a,
+                    icon: o,
+                    image: r,
+                    duration: d,
+                    type: l,
+                    top: h
+                }), e.changeStatus(), e;
+            }, wx.lin.hideMessage = function() {
+                e.setData({
                     status: !1
                 });
-            });
+            };
         }
     }
 });

@@ -1,10 +1,8 @@
 <l-tab-bar list="{{list}}" textColor="#bbbbbb"></l-tab-bar>
 <l-loadmore endText="已经到底部了" line="{{true}}" loadingText="加载中" show="{{true}}" type="{{loadmore}}">
     <view slot="content">
-        <l-card bindtap="onNaviCard" data-id="{{item.id}}" image="{{'https://cdn.nshome.cn/image/games/'+item.id+'.jpg'}}" imageMode="aspectFit" lClass="card" title="{{item.name_ch}}" type="primary" wx:for="{{games}}" wx:key="id">
-            <view class="content">
-            {{item.game_jiangli}}
-        </view>
+        <l-card bindtap="onNaviCard" data-id="{{item.id}}" image="{{'https://newapi.nshome.cn:3001/image/games/'+item.id+'.jpg'}}" imageMode="aspectFit" lClass="card" title="{{item.name_ch}}" type="primary" wx:for="{{games}}" wx:key="id">
+            <view class="content"> {{item.game_jiangli}} </view>
         </l-card>
     </view>
 </l-loadmore>

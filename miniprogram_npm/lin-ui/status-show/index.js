@@ -1,3 +1,5 @@
+var e = require("../../../@babel/runtime/helpers/objectSpread2");
+
 Component({
     externalClasses: [ "l-class", "l-image-class", "l-button-class", "l-describe-class" ],
     properties: {
@@ -28,37 +30,36 @@ Component({
         }
     },
     data: {},
-    attached() {
+    attached: function() {
         this._changeStatus(), this.data.openApi && this._init();
     },
     pageLifetimes: {
-        show() {
+        show: function() {
             this._init();
         }
     },
     methods: {
-        _init() {
-            wx.lin = wx.lin || {}, wx.lin.showStatusShow = (e => {
-                const {type: t = "success", image: a = "", describe: s = "", buttonText: i = "", bgColor: r = "#fff", fullScreen: o = !0} = {
-                    ...e
-                };
-                this.setData({
+        _init: function() {
+            var t = this;
+            wx.lin = wx.lin || {}, wx.lin.showStatusShow = function(a) {
+                var s = e({}, a), i = s.type, o = void 0 === i ? "success" : i, n = s.image, r = void 0 === n ? "" : n, c = s.describe, p = void 0 === c ? "" : c, g = s.buttonText, l = void 0 === g ? "" : g, u = s.bgColor, h = void 0 === u ? "#fff" : u, d = s.fullScreen, b = void 0 === d || d;
+                t.setData({
                     show: !0,
-                    type: t,
-                    image: a,
-                    describe: s,
-                    buttonText: i,
-                    bgColor: r,
-                    fullScreen: o
+                    type: o,
+                    image: r,
+                    describe: p,
+                    buttonText: l,
+                    bgColor: h,
+                    fullScreen: b
                 });
-            }), wx.lin.hideStatusShow = (() => {
-                this.setData({
+            }, wx.lin.hideStatusShow = function() {
+                t.setData({
                     show: !1
                 });
-            });
+            };
         },
-        _changeStatus() {
-            const e = this.data.type;
+        _changeStatus: function() {
+            var e = this.data.type;
             if (e) switch (e) {
               case "success":
                 this.setData({
@@ -120,7 +121,7 @@ Component({
                 console.warn(e + " is not a valid value");
             }
         },
-        tapStatusShow() {
+        tapStatusShow: function() {
             this.triggerEvent("lincorvertap", {}, {
                 bubbles: !0,
                 composed: !0

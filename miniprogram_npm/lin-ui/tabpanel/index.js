@@ -59,8 +59,8 @@ Component({
         parent: null
     },
     methods: {
-        updateData() {
-            let t = this.data.parent;
+        updateData: function() {
+            var t = this.data.parent;
             t && t.initTabs();
         }
     }

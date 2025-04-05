@@ -6,8 +6,27 @@
         <view class="shop-list-title">
             <text>官方授权店铺名单：</text>
         </view>
-        <view class="image-wrapper">
-            <image mode="aspectFit" src="https://cdn.nshome.cn/dianpu.jpg"></image>
+        <view class="table">
+            <view class="table-header">
+                <view class="cell">平台</view>
+                <view class="cell">店名</view>
+            </view>
+            <view class="table-row">
+                <view class="cell">微信</view>
+                <view class="cell">全攻略电玩商城</view>
+            </view>
+            <view class="table-row">
+                <view class="cell">淘宝</view>
+                <view class="cell">Amiibo助手</view>
+            </view>
+            <view class="table-row">
+                <view class="cell">淘宝</view>
+                <view class="cell">魔力电玩</view>
+            </view>
+            <view class="table-row">
+                <view class="cell">淘宝</view>
+                <view class="cell">Switch全攻略</view>
+            </view>
         </view>
     </view>
 </content-title>

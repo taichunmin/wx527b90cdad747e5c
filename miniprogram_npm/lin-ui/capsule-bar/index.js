@@ -1,8 +1,8 @@
-var t = a(require("../utils/device-util")), e = a(require("../behaviors/validator")), l = a(require("../core/utils/event-util"));
+var e = require("../../../@babel/runtime/helpers/regeneratorRuntime"), t = require("../../../@babel/runtime/helpers/asyncToGenerator"), a = i(require("../utils/device-util")), l = i(require("../behaviors/validator")), n = i(require("../core/utils/event-util"));
 
-function a(t) {
-    return t && t.__esModule ? t : {
-        default: t
+function i(e) {
+    return e && e.__esModule ? e : {
+        default: e
     };
 }
 
@@ -10,7 +10,7 @@ Component({
     options: {
         multipleSlots: !0
     },
-    behaviors: [ e.default ],
+    behaviors: [ l.default ],
     externalClasses: [ "l-title-class" ],
     properties: {
         bgColor: {
@@ -88,8 +88,8 @@ Component({
         }
     },
     data: {
-        titleBarHeight: t.default.getTitleBarHeight(),
-        statusBarHeight: t.default.getStatusBarHeight(),
+        titleBarHeight: a.default.getTitleBarHeight(),
+        statusBarHeight: a.default.getStatusBarHeight(),
         capsuleButtonInfo: null
     },
     lifetimes: {
@@ -100,30 +100,41 @@ Component({
         }
     },
     methods: {
-        getCapsuleButtonInfo() {
-            const t = wx.getSystemInfoSync().screenWidth, e = wx.getMenuButtonBoundingClientRect();
-            return e.left = t - e.right, e.right = e.left + e.width, e;
+        getCapsuleButtonInfo: function() {
+            var e = wx.getSystemInfoSync().screenWidth, t = wx.getMenuButtonBoundingClientRect();
+            return t.left = e - t.right, t.right = t.left + t.width, t;
         },
-        onTapLeftButton() {
-            l.default.emit(this, "linlefttap"), this.data.disableBack || wx.navigateBack();
+        onTapLeftButton: function() {
+            n.default.emit(this, "linlefttap"), this.data.disableBack || wx.navigateBack();
         },
-        onLongPressLeftButton() {
-            l.default.emit(this, "linleftlongpress");
+        onLongPressLeftButton: function() {
+            n.default.emit(this, "linleftlongpress");
         },
-        async onTapRightButton() {
-            l.default.emit(this, "linrighttap");
-            const t = this.data.homePage;
-            this.data.disableHome || wx.switchTab({
-                url: t,
-                fail() {
-                    wx.navigateTo({
-                        url: t
-                    });
-                }
-            });
+        onTapRightButton: function() {
+            var a = this;
+            return t(e().mark(function t() {
+                var l;
+                return e().wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        n.default.emit(a, "linrighttap"), l = a.data.homePage, a.data.disableHome || wx.switchTab({
+                            url: l,
+                            fail: function() {
+                                wx.navigateTo({
+                                    url: l
+                                });
+                            }
+                        });
+
+                      case 3:
+                      case "end":
+                        return e.stop();
+                    }
+                }, t);
+            }))();
         },
-        onLongPressRightButton() {
-            l.default.emit(this, "linrightlongpress");
+        onLongPressRightButton: function() {
+            n.default.emit(this, "linrightlongpress");
         }
     }
 });

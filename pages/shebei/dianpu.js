@@ -1,11 +1,11 @@
 Page({
     data: {},
-    onLoad() {},
-    onReady() {},
-    onShow() {},
-    onHide() {},
-    onUnload() {},
-    onPullDownRefresh() {},
-    onReachBottom() {},
-    onShareAppMessage() {}
+    onLoad: function() {},
+    onReady: function() {},
+    onShow: function() {},
+    onHide: function() {},
+    onUnload: function() {},
+    onPullDownRefresh: function() {},
+    onReachBottom: function() {},
+    onShareAppMessage: function() {}
 });

@@ -1,17 +1,15 @@
 Object.defineProperty(exports, "__esModule", {
     value: !0
-}), exports.default = void 0;
+}), exports.default = void 0, require("../../../@babel/runtime/helpers/Arrayincludes");
 
-var e = Behavior({
-    definitionFilter(e) {
-        const {properties: o} = e;
-        Object.keys(o).forEach(e => {
-            const {options: t} = o[e];
-            t && (o[e].observer = function(o) {
-                !t.includes(o) && o && console.error(`${e}: ${o} must be in the [${t}]`);
+exports.default = Behavior({
+    definitionFilter: function(e) {
+        var r = e.properties;
+        Object.keys(r).forEach(function(e) {
+            var t = r[e].options;
+            t && (r[e].observer = function(r) {
+                !t.includes(r) && r && console.error("".concat(e, ": ").concat(r, " must be in the [").concat(t, "]"));
             });
         });
     }
 });
-
-exports.default = e;

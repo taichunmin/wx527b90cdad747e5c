@@ -50,17 +50,18 @@ Component({
         height: Number
     },
     methods: {
-        handleTap() {
-            if (this.data.disable) return;
-            let e = {
-                name: this.data.name,
-                cell: this.data.cell,
-                select: this.data.select
-            };
-            this.triggerEvent("lintap", e, {
-                bubbles: !0,
-                composed: !0
-            });
+        handleTap: function() {
+            if (!this.data.disable) {
+                var e = {
+                    name: this.data.name,
+                    cell: this.data.cell,
+                    select: this.data.select
+                };
+                this.triggerEvent("lintap", e, {
+                    bubbles: !0,
+                    composed: !0
+                });
+            }
         }
     }
 });

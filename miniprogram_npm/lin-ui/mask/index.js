@@ -1,9 +1,9 @@
-var e, a = (e = require("../behaviors/zIndex")) && e.__esModule ? e : {
+var e, t = (e = require("../behaviors/zIndex")) && e.__esModule ? e : {
     default: e
 };
 
 Component({
-    behaviors: [ a.default ],
+    behaviors: [ t.default ],
     externalClasses: [ "l-class", "l-mask-class" ],
     properties: {
         show: {
@@ -37,8 +37,8 @@ Component({
     },
     data: {},
     methods: {
-        doNothingMove() {},
-        onMaskTap() {
+        doNothingMove: function() {},
+        onMaskTap: function() {
             !0 !== this.data.locked && this.setData({
                 show: !1
             }), this.triggerEvent("lintap", !0, {

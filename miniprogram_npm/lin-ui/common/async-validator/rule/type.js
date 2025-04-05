@@ -2,41 +2,47 @@ Object.defineProperty(exports, "__esModule", {
     value: !0
 }), exports.default = void 0;
 
-var e, t = function(e) {
-    if (e && e.__esModule) return e;
+var e, t = require("../../../../../@babel/runtime/helpers/typeof"), r = function(e, t) {
+    if (!t && e && e.__esModule) return e;
     if (null === e || "object" != typeof e && "function" != typeof e) return {
         default: e
     };
-    var t = f();
-    if (t && t.has(e)) return t.get(e);
-    var r = {}, a = Object.defineProperty && Object.getOwnPropertyDescriptor;
-    for (var n in e) if (Object.prototype.hasOwnProperty.call(e, n)) {
-        var u = a ? Object.getOwnPropertyDescriptor(e, n) : null;
-        u && (u.get || u.set) ? Object.defineProperty(r, n, u) : r[n] = e[n];
+    var r = u(t);
+    if (r && r.has(e)) return r.get(e);
+    var n = {}, f = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for (var a in e) if ("default" !== a && Object.prototype.hasOwnProperty.call(e, a)) {
+        var o = f ? Object.getOwnPropertyDescriptor(e, a) : null;
+        o && (o.get || o.set) ? Object.defineProperty(n, a, o) : n[a] = e[a];
     }
-    r.default = e, t && t.set(e, r);
-    return r;
-}(require("../util")), r = (e = require("./required")) && e.__esModule ? e : {
+    n.default = e, r && r.set(e, n);
+    return n;
+}(require("../util")), n = (e = require("./required")) && e.__esModule ? e : {
     default: e
 };
 
-function f() {
+function u(e) {
     if ("function" != typeof WeakMap) return null;
-    var e = new WeakMap();
-    return f = function() {
-        return e;
-    }, e;
+    var t = new WeakMap(), r = new WeakMap();
+    return (u = function(e) {
+        return e ? r : t;
+    })(e);
 }
 
-const a = {
+var f = {
     email: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
     url: new RegExp("^(?!mailto:)(?:(?:http|https|ftp)://|//)(?:\\S+(?::\\S*)?@)?(?:(?:(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[0-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))|localhost)(?::\\d{2,5})?(?:(/|\\?|#)[^\\s]*)?$", "i"),
     hex: /^#?([a-f0-9]{6}|[a-f0-9]{3})$/i
-}, n = {
-    integer: e => n.number(e) && parseInt(e, 10) === e,
-    float: e => n.number(e) && !n.integer(e),
-    array: e => Array.isArray(e),
-    regexp(e) {
+}, a = {
+    integer: function(e) {
+        return a.number(e) && parseInt(e, 10) === e;
+    },
+    float: function(e) {
+        return a.number(e) && !a.integer(e);
+    },
+    array: function(e) {
+        return Array.isArray(e);
+    },
+    regexp: function(e) {
         if (e instanceof RegExp) return !0;
         try {
             return !!new RegExp(e);
@@ -45,19 +51,32 @@ const a = {
             return !1;
         }
     },
-    date: e => "function" == typeof e.getTime && "function" == typeof e.getMonth && "function" == typeof e.getYear,
-    number: e => !isNaN(e) && "" !== e,
-    object: e => "object" == typeof e && !n.array(e),
-    method: e => "function" == typeof e,
-    email: e => "string" == typeof e && !!e.match(a.email) && e.length < 255,
-    url: e => "string" == typeof e && !!e.match(a.url),
-    hex: e => "string" == typeof e && !!e.match(a.hex)
+    date: function(e) {
+        return "function" == typeof e.getTime && "function" == typeof e.getMonth && "function" == typeof e.getYear;
+    },
+    number: function(e) {
+        return !isNaN(e) && "" !== e;
+    },
+    object: function(e) {
+        return "object" == t(e) && !a.array(e);
+    },
+    method: function(e) {
+        return "function" == typeof e;
+    },
+    email: function(e) {
+        return "string" == typeof e && !!e.match(f.email) && e.length < 255;
+    },
+    url: function(e) {
+        return "string" == typeof e && !!e.match(f.url);
+    },
+    hex: function(e) {
+        return "string" == typeof e && !!e.match(f.hex);
+    }
 };
 
-var u = function(e, f, a, u, o) {
-    if (e.required && void 0 === f) return void (0, r.default)(e, f, a, u, o);
-    const i = e.type;
-    [ "integer", "float", "array", "regexp", "object", "method", "email", "number", "date", "url", "hex" ].indexOf(i) > -1 ? n[i](f) || u.push(t.format(o.messages.types[i], e.fullField, e.type)) : i && typeof f !== e.type && u.push(t.format(o.messages.types[i], e.fullField, e.type));
+exports.default = function(e, u, f, o, i) {
+    if (e.required && void 0 === u) (0, n.default)(e, u, f, o, i); else {
+        var p = e.type;
+        [ "integer", "float", "array", "regexp", "object", "method", "email", "number", "date", "url", "hex" ].indexOf(p) > -1 ? a[p](u) || o.push(r.format(i.messages.types[p], e.fullField, e.type)) : p && t(u) !== e.type && o.push(r.format(i.messages.types[p], e.fullField, e.type));
+    }
 };
-
-exports.default = u;

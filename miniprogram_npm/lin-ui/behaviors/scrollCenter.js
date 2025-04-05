@@ -2,44 +2,46 @@ Object.defineProperty(exports, "__esModule", {
     value: !0
 }), exports.default = void 0;
 
-var e = Behavior({
+exports.default = Behavior({
     methods: {
-        getRect(e, t = !1) {
-            return new Promise((r, o) => {
-                const s = wx.createSelectorQuery().in(this);
-                (t ? s.selectAll(e) : s.select(e)).boundingClientRect(e => {
-                    if (!e) return o("找不到元素");
-                    r(e);
+        getRect: function(e) {
+            var t = this, r = arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
+            return new Promise(function(o, n) {
+                var c = wx.createSelectorQuery().in(t);
+                (r ? c.selectAll(e) : c.select(e)).boundingClientRect(function(e) {
+                    if (!e) return n("找不到元素");
+                    o(e);
                 }).exec();
             });
         },
-        queryScrollNode(e, t, r = "width") {
-            if (t < 0) return;
-            const o = e[t];
-            this.getRect(".l-tabsscroll").then(s => {
-                if (!s) return console.error("找不到元素");
-                const c = s[r];
-                let l = e.slice(0, t).reduce((e, t) => e + t[r], 0);
-                l += (o[r] - c) / 2, "width" === r ? this.setData({
-                    transformX: l,
-                    transformY: 0
-                }) : this.setData({
-                    transformX: 0,
-                    transformY: l
+        queryScrollNode: function(e, t) {
+            var r = this, o = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : "width";
+            if (!(t < 0)) {
+                var n = e[t];
+                this.getRect(".l-tabsscroll").then(function(c) {
+                    if (!c) return console.error("找不到元素");
+                    var i = c[o], s = e.slice(0, t).reduce(function(e, t) {
+                        return e + t[o];
+                    }, 0);
+                    s += (n[o] - i) / 2, "width" === o ? r.setData({
+                        transformX: s,
+                        transformY: 0
+                    }) : r.setData({
+                        transformX: 0,
+                        transformY: s
+                    });
+                }).catch(function(e) {
+                    console.error(e);
                 });
-            }).catch(e => {
-                console.error(e);
-            });
+            }
         },
-        queryMultipleNodes() {
-            const {placement: e, currentIndex: t} = this.data;
-            this.getRect(".l-tabs-item", !0).then(r => {
-                -1 !== [ "top", "bottom" ].indexOf(e) ? this.queryScrollNode(r, t) : this.queryScrollNode(r, t, "height");
-            }).catch(e => {
+        queryMultipleNodes: function() {
+            var e = this, t = this.data, r = t.placement, o = t.currentIndex;
+            this.getRect(".l-tabs-item", !0).then(function(t) {
+                -1 !== [ "top", "bottom" ].indexOf(r) ? e.queryScrollNode(t, o) : e.queryScrollNode(t, o, "height");
+            }).catch(function(e) {
                 console.error(e);
             });
         }
     }
 });
-
-exports.default = e;

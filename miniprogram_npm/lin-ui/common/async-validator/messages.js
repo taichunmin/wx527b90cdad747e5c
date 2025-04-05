@@ -45,8 +45,8 @@ function s() {
         pattern: {
             mismatch: "%s value %s does not match pattern %s"
         },
-        clone() {
-            const s = JSON.parse(JSON.stringify(this));
+        clone: function() {
+            var s = JSON.parse(JSON.stringify(this));
             return s.clone = this.clone, s;
         }
     };
@@ -56,6 +56,4 @@ Object.defineProperty(exports, "__esModule", {
     value: !0
 }), exports.messages = void 0, exports.newMessages = s;
 
-const e = s();
-
-exports.messages = e;
+exports.messages = s();

@@ -1,5 +1,5 @@
-var t, e = (t = require("../core/utils/node-util")) && t.__esModule ? t : {
-    default: t
+var e, t = require("../../../@babel/runtime/helpers/regeneratorRuntime"), n = require("../../../@babel/runtime/helpers/asyncToGenerator"), a = (e = require("../core/utils/node-util")) && e.__esModule ? e : {
+    default: e
 };
 
 Component({
@@ -41,33 +41,81 @@ Component({
         _idDefault: -1
     },
     methods: {
-        async onTapTitle() {
-            if (this.data.disable) return;
-            let t = this.getRelationNodes("../collapse/index");
-            await t[0].onTapCollapseItem(this);
+        onTapTitle: function() {
+            var e = this;
+            return n(t().mark(function n() {
+                var a;
+                return t().wrap(function(t) {
+                    for (;;) switch (t.prev = t.next) {
+                      case 0:
+                        if (!e.data.disable) {
+                            t.next = 2;
+                            break;
+                        }
+                        return t.abrupt("return");
+
+                      case 2:
+                        return a = e.getRelationNodes("../collapse/index"), t.next = 5, a[0].onTapCollapseItem(e);
+
+                      case 5:
+                      case "end":
+                        return t.stop();
+                    }
+                }, n);
+            }))();
         },
-        async foldContent() {
-            const t = await e.default.getNodeRectFromComponent(this, ".container-body-wrapper");
-            this.data.isExpandContent ? (this.setData({
-                bodyHeight: t.height + "px"
-            }), setTimeout(() => {
-                this.setData({
-                    isExpandContent: !1,
-                    bodyHeight: "0px"
-                });
-            }, 20)) : this.setData({
-                isExpandContent: !1,
-                bodyHeight: "0px"
-            });
+        foldContent: function() {
+            var e = this;
+            return n(t().mark(function n() {
+                var r;
+                return t().wrap(function(t) {
+                    for (;;) switch (t.prev = t.next) {
+                      case 0:
+                        return t.next = 2, a.default.getNodeRectFromComponent(e, ".container-body-wrapper");
+
+                      case 2:
+                        r = t.sent, e.data.isExpandContent ? (e.setData({
+                            bodyHeight: r.height + "px"
+                        }), setTimeout(function() {
+                            e.setData({
+                                isExpandContent: !1,
+                                bodyHeight: "0px"
+                            });
+                        }, 20)) : e.setData({
+                            isExpandContent: !1,
+                            bodyHeight: "0px"
+                        });
+
+                      case 4:
+                      case "end":
+                        return t.stop();
+                    }
+                }, n);
+            }))();
         },
-        async expandContent() {
-            const t = await e.default.getNodeRectFromComponent(this, ".container-body-wrapper");
-            this.setData({
-                isExpandContent: !0,
-                bodyHeight: t.height + "px"
-            });
+        expandContent: function() {
+            var e = this;
+            return n(t().mark(function n() {
+                var r;
+                return t().wrap(function(t) {
+                    for (;;) switch (t.prev = t.next) {
+                      case 0:
+                        return t.next = 2, a.default.getNodeRectFromComponent(e, ".container-body-wrapper");
+
+                      case 2:
+                        r = t.sent, e.setData({
+                            isExpandContent: !0,
+                            bodyHeight: r.height + "px"
+                        });
+
+                      case 4:
+                      case "end":
+                        return t.stop();
+                    }
+                }, n);
+            }))();
         },
-        onTransitionend() {
+        onTransitionend: function() {
             this.data.isExpandContent && this.setData({
                 bodyHeight: "auto"
             });

@@ -1,12 +1,12 @@
 <l-capsule-bar bgColor="#3963bc" capsuleColor="white" catch:linleftlongpress="onLongPressLeft" catch:linrightlongpress="onLongPressRight" homePage="/pages/index/index" title="阿米波助手" titleColor="white">
     <view class="vi">
         <l-button bindtap="changjian" icon="help" iconColor="#333" iconSize="30" shape="circle" size="long" type="warning" wx:if="{{tishi}}">如果你写入数据一直转圈不能成功，点这里解决</l-button>
-        <l-card image="https://cdn.nshome.cn/image/jiangli/{{jiangliid}}.png" imageMode="aspectFit" lClass="card2" title="{{name}}" type="cover" wx:if="{{jiangliid!=''}}">
+        <l-card image="https://newapi.nshome.cn:3001/image/jiangli/{{jiangliid}}.png" imageMode="aspectFit" lClass="card2" title="{{name}}" type="cover" wx:if="{{jiangliid!=''}}">
             <view class="content">
                 <l-button bindtap="write" data-head="{{amiibo.head}}" data-tail="{{amiibo.tail}}" icon="download" iconColor="#fff" iconSize="30" lClass="btn" style="margin-right:50rpx" width="500">写入数据</l-button>
             </view>
         </l-card>
-        <l-card image="https://image.nshome.cn/amiibo_image/400_icon_{{amiibo.head}}-{{amiibo.tail}}.png" imageMode="aspectFit" lClass="card" title="" type="cover" wx:else>
+        <l-card image="https://newapi.nshome.cn:3001/amiibo_image/400_icon_{{amiibo.head}}-{{amiibo.tail}}.png" imageMode="aspectFit" lClass="card" title="" type="cover" wx:else>
             <view class="content">
                 <l-button bindtap="write" data-head="{{amiibo.head}}" data-tail="{{amiibo.tail}}" icon="download" iconColor="#fff" iconSize="30" lClass="btn" style="margin-right:50rpx" width="500">写入数据</l-button>
                 <l-list isLink="{{false}}" rightDesc="{{amiibo.name}}" title="英文名称:"></l-list>
@@ -15,7 +15,7 @@
     </view>
     <view class="vi">
         <l-card lClass="card" plaintext="true" title="该数据在塞尔达传说旷野之息的掉落表：" wx:if="{{gameid==4}}">
-            <image class="diaolbuo" imageMode="aspectFit" src="https://cdn.nshome.cn/diao/{{amiibo.amiiboData.amiiboId}}.png"></image>
+            <image class="diaolbuo" imageMode="aspectFit" src="https://newapi.nshome.cn:3001/diao/{{amiibo.amiiboData.amiiboId}}.png"></image>
         </l-card>
     </view>
     <block wx:if="{{imgurls.length>0&&gameid==1}}">

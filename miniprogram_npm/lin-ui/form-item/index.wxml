@@ -3,9 +3,7 @@
         <view wx:if="{{labelSlot}}">
             <slot name="label"></slot>
         </view>
-        <view wx:else>
-            {{label}}
-        </view>
+        <view wx:else> {{label}} </view>
     </view>
     <view class="label-content l-form-content-class">
         <slot></slot>

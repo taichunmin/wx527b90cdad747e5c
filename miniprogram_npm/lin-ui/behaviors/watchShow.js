@@ -2,7 +2,7 @@ Object.defineProperty(exports, "__esModule", {
     value: !0
 }), exports.default = void 0;
 
-var t = Behavior({
+exports.default = Behavior({
     observers: {
         show: function(t) {
             t && this.changeStatus(), t || this.setData({
@@ -11,16 +11,15 @@ var t = Behavior({
         }
     },
     methods: {
-        changeStatus() {
+        changeStatus: function() {
+            var t = this;
             this.setData({
                 status: !0
-            }), this.data.timer && clearTimeout(this.data.timer), this.data.timer = setTimeout(() => {
-                this.setData({
+            }), this.data.timer && clearTimeout(this.data.timer), this.data.timer = setTimeout(function() {
+                t.setData({
                     status: !1
-                }), this.data.success && this.data.success(), this.data.timer = null;
+                }), t.data.success && t.data.success(), t.data.timer = null;
             }, this.properties.duration);
         }
     }
 });
-
-exports.default = t;

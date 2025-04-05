@@ -1,4 +1,4 @@
-var e = o(require("../behaviors/computeOffset")), t = o(require("../behaviors/validator"));
+var e = require("../../../@babel/runtime/helpers/objectSpread2"), t = o(require("../behaviors/computeOffset")), i = o(require("../behaviors/validator"));
 
 function o(e) {
     return e && e.__esModule ? e : {
@@ -7,7 +7,7 @@ function o(e) {
 }
 
 Component({
-    behaviors: [ e.default, t.default ],
+    behaviors: [ t.default, i.default ],
     externalClasses: [ "l-container-class", "l-class" ],
     properties: {
         show: {
@@ -39,35 +39,34 @@ Component({
         custom: Boolean,
         fullScreen: Boolean
     },
-    attached() {
+    attached: function() {
         this._init();
     },
     pageLifetimes: {
-        show() {
+        show: function() {
             this._init();
         }
     },
     methods: {
-        _init() {
-            wx.lin = wx.lin || {}, wx.lin.showLoading = (e => {
-                const {custom: t = !1, fullScreen: o = !1, color: i = "", type: a = "rotate", size: l = "medium", opacity: s = "1"} = {
-                    ...e
-                };
-                this.setData({
-                    custom: t,
-                    fullScreen: o,
-                    color: i,
-                    type: a,
-                    size: l,
-                    opacity: s,
+        _init: function() {
+            var t = this;
+            wx.lin = wx.lin || {}, wx.lin.showLoading = function(i) {
+                var o = e({}, i), n = o.custom, a = void 0 !== n && n, r = o.fullScreen, l = void 0 !== r && r, s = o.color, u = void 0 === s ? "" : s, c = o.type, d = void 0 === c ? "rotate" : c, p = o.size, v = void 0 === p ? "medium" : p, f = o.opacity, h = void 0 === f ? "1" : f;
+                t.setData({
+                    custom: a,
+                    fullScreen: l,
+                    color: u,
+                    type: d,
+                    size: v,
+                    opacity: h,
                     show: !0
                 });
-            }), wx.lin.hideLoading = (() => {
-                this.setData({
+            }, wx.lin.hideLoading = function() {
+                t.setData({
                     show: !1
                 });
-            });
+            };
         },
-        doNothingMove() {}
+        doNothingMove: function() {}
     }
 });
