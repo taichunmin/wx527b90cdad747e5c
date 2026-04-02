@@ -1,28 +1,31 @@
 .content {
     height: calc(100% - 100rpx);
-    width: 100%;
+    width: 100%
 }
 
 .product-image {
     display: block;
-    width: 100%;
+    width: 100%
 }
 
 .footer {
     background-color: #fff;
     bottom: 0;
     box-shadow: 0 -2px 8px rgba(0,0,0,.15);
+    display: -webkit-flex;
     display: flex;
+    -webkit-justify-content: space-around;
     justify-content: space-around;
     left: 0;
     padding: 10rpx 0;
     position: fixed;
-    width: 100%;
+    width: 100%
 }
 
 .button-taobao,.button-weidian {
+    -webkit-flex-grow: 1;
     flex-grow: 1;
-    margin: 5rpx;
+    margin: 5rpx
 }
 
 .taobao-image {
@@ -31,5 +34,5 @@
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 10
 }

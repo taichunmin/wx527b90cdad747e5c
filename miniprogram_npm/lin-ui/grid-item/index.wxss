@@ -1,12 +1,16 @@
 .grid-item {
+    -webkit-align-items: center;
     align-items: center;
     box-sizing: border-box;
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-direction: column;
     flex-direction: column;
+    -webkit-justify-content: center;
     justify-content: center;
-    padding: 32rpx 16rpx;
+    padding: 32rpx 16rpx
 }
 
 .l-gird-item-hover {
-    opacity: .8;
+    opacity: .8
 }

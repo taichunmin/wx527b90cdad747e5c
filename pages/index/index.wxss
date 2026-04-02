@@ -1,5 +1,5 @@
 page {
-    background-color: #f7f7f7;
+    background-color: #f7f7f7
 }
 
 .content {
@@ -10,27 +10,31 @@ page {
     font-size: 26rpx;
     margin-top: 10rpx;
     overflow: visible;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis
 }
 
 .card {
-    margin: 15rpx auto!important;
+    margin: 15rpx auto!important
 }
 
 .custom-container {
+    -webkit-align-items: center;
     align-items: center;
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-direction: row;
     flex-direction: row;
-    justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center
 }
 
 .custom-img {
     height: 120rpx;
     margin-right: 20rpx;
-    width: 120rpx;
+    width: 120rpx
 }
 
 .custom-txt {
     color: #bbb;
-    font-size: 28rpx;
+    font-size: 28rpx
 }

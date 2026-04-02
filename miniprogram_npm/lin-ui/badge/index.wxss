@@ -2,7 +2,7 @@
     display: inline-block;
     line-height: 1;
     position: relative;
-    vertical-align: middle;
+    vertical-align: middle
 }
 
 .l-badge-content {
@@ -19,7 +19,7 @@
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
-    z-index: 10;
+    z-index: 10
 }
 
 .l-badge-content-horn {
@@ -28,7 +28,7 @@
     line-height: 28rpx;
     min-width: 54rpx;
     padding: 0 8rpx;
-    top: -10rpx;
+    top: -10rpx
 }
 
 .l-badge-content-circle {
@@ -37,7 +37,7 @@
     line-height: 32rpx;
     min-width: 32rpx;
     padding: 0 10rpx;
-    top: -10rpx;
+    top: -10rpx
 }
 
 .l-badge-dot {
@@ -47,6 +47,7 @@
     position: absolute;
     right: 0rpx;
     top: -4rpx;
+    -webkit-transform: translateX(50%);
     transform: translateX(50%);
-    width: 16rpx;
+    width: 16rpx
 }

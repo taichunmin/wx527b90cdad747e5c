@@ -1,13 +1,16 @@
 .form-item {
+    -webkit-align-items: center;
     align-items: center;
     box-sizing: border-box;
     color: #333;
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-direction: row;
     flex-direction: row;
     font-size: 28rpx;
     height: 88rpx;
     padding-right: 25rpx;
-    position: relative;
+    position: relative
 }
 
 .row {
@@ -16,77 +19,87 @@
     height: 2rpx;
     position: absolute;
     right: 0;
-    width: 730rpx;
+    width: 730rpx
 }
 
 .text-require {
     color: #e23;
-    vertical-align: middle;
+    vertical-align: middle
 }
 
 .form-label {
+    -webkit-align-items: center;
     align-items: center;
     box-sizing: border-box;
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-direction: row;
     flex-direction: row;
     height: 88rpx;
     padding-left: 25rpx;
-    padding-right: 15rpx;
+    padding-right: 15rpx
 }
 
 .disabled {
-    color: #9a9a9a!important;
+    color: #9a9a9a!important
 }
 
 .mask {
     height: 100%;
     position: absolute;
     width: 100%;
-    z-index: 999;
+    z-index: 999
 }
 
 .form-label-right {
-    justify-content: flex-end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end
 }
 
 .form-label-left {
-    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start
 }
 
 .input {
+    -webkit-flex: 1;
     flex: 1;
     height: 100%;
-    line-height: 100%;
+    line-height: 100%
 }
 
 .close {
+    -webkit-align-items: center;
     align-items: center;
     background: #ddd;
     border-radius: 50%;
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-direction: row;
     flex-direction: row;
     height: 36rpx;
+    -webkit-justify-content: center;
     justify-content: center;
     margin-right: 20rpx;
-    width: 36rpx;
+    width: 36rpx
 }
 
 .pls-class {
-    color: #9a9a9a;
+    color: #9a9a9a
 }
 
 .hideLabel {
-    padding-left: 25rpx;
+    padding-left: 25rpx
 }
 
 .l-eye {
-    padding: 10rpx;
+    padding: 10rpx
 }
 
 .l-eye-text {
-    color: #3963bc!important;
+    color: #3963bc!important
 }
 
 .l-eye-password {
-    color: rgba(57,99,188,.6)!important;
+    color: rgba(57,99,188,.6)!important
 }

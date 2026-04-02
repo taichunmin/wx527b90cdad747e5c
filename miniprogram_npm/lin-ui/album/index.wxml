@@ -6,4 +6,5 @@
         </view>
     </view>
 </view>
-<wxs module="album" src="index.wxs" />
+
+<wxs module="album" src="index.wxs"/>

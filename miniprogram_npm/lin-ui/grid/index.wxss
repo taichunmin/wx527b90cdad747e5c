@@ -1,24 +1,28 @@
 .l-grid {
+    -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
-    width: inherit;
+    width: inherit
 }
 
 .l-grid,.l-grid .l-grid-item {
-    display: flex;
+    display: -webkit-flex;
+    display: flex
 }
 
 .l-grid .l-grid-item {
     border: 0 solid #ededed;
     box-sizing: border-box;
+    -webkit-flex-direction: column;
     flex-direction: column;
+    -webkit-justify-content: center;
     justify-content: center;
-    text-align: center;
+    text-align: center
 }
 
 .l-grid .center-grid {
-    border-bottom-width: 2rpx;
+    border-bottom-width: 2rpx
 }
 
 .l-grid .side-grid {
-    border-right-width: 2rpx;
+    border-right-width: 2rpx
 }

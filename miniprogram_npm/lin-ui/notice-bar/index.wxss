@@ -7,42 +7,48 @@
     height: 72rpx;
     line-height: 72rpx;
     overflow: hidden;
-    width: 750rpx;
+    width: 750rpx
 }
 
 .l-noticebar,.l-noticebar-icon {
-    display: flex;
+    display: -webkit-flex;
+    display: flex
 }
 
 .l-noticebar-icon {
+    -webkit-align-items: center;
     align-items: center;
     margin-left: 20rpx;
-    margin-right: 18rpx;
+    margin-right: 18rpx
 }
 
 .l-noticebar-icon+.l-noticebar-content-wrap-view {
-    margin-left: 5rpx;
+    margin-left: 5rpx
 }
 
 .l-noticebar-operation {
+    -webkit-align-items: center;
     align-items: center;
+    display: -webkit-flex;
     display: flex;
     margin-left: 8rpx;
-    margin-right: 16rpx;
+    margin-right: 16rpx
 }
 
 .l-noticebar-content-wrap {
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex: 1;
     flex: 1;
     height: 72rpx;
     margin-left: 5rpx;
     overflow: hidden;
     position: relative;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: nowrap
 }
 
 .l-noticebar-content-wrap .l-noticebar-content {
     position: absolute;
-    transition-duration: 20s;
+    transition-duration: 20s
 }

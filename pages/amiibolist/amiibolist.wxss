@@ -1,19 +1,24 @@
 .tab-content {
+    -webkit-align-items: center;
     align-items: center;
-    justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center
 }
 
 .tab-content,.tab-content-buzhou {
     color: #8c98ae;
+    display: -webkit-flex;
     display: flex;
     font-size: 28rpx;
     height: 100%;
-    min-height: 140rpx;
+    min-height: 140rpx
 }
 
 .tab-content-buzhou {
+    -webkit-align-items: left;
     align-items: left;
-    justify-content: left;
+    -webkit-justify-content: left;
+    justify-content: left
 }
 
 .text {
@@ -23,7 +28,7 @@
     font-weight: 400;
     height: 30rpx;
     line-height: 30rpx;
-    margin-top: 20rpx;
+    margin-top: 20rpx
 }
 
 .text2,.text3 {
@@ -33,24 +38,24 @@
     font-weight: 400;
     height: 30rpx;
     line-height: 30rpx;
-    margin-top: 20rpx;
+    margin-top: 20rpx
 }
 
 .text3 {
-    text-align: left;
+    text-align: left
 }
 
 .grid-item {
-    height: 400rpx;
+    height: 400rpx
 }
 
 .img {
     height: 250rpx!important;
-    width: 250rpx!important;
+    width: 250rpx!important
 }
 
 .tit {
     font-size: large;
     margin-top: 35rpx;
-    text-align: center;
+    text-align: center
 }

@@ -1,64 +1,77 @@
 .form-item-container {
     border-bottom: 1px solid #eee;
     color: #777;
+    display: -webkit-flex;
     display: flex;
     padding: 0 20rpx;
-    position: relative;
+    position: relative
 }
 
 .form-item-container.textHeight {
-    margin-bottom: 44rpx;
+    margin-bottom: 44rpx
 }
 
 .form-item-container.label-column {
+    -webkit-align-items: left;
     align-items: left;
-    flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column
 }
 
 .form-item-container.label-column .label-text {
-    line-height: 44rpx;
+    line-height: 44rpx
 }
 
 .form-item-container.label-row {
+    -webkit-align-items: center;
     align-items: center;
-    flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row
 }
 
 .form-item-container.label-row .label-text {
-    line-height: 88rpx;
+    line-height: 88rpx
 }
 
 .form-item-container .label-text {
+    display: -webkit-flex;
     display: flex;
-    line-height: 88rpx;
+    line-height: 88rpx
 }
 
 .form-item-container .label-text-column-start {
-    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start
 }
 
 .form-item-container .label-text-column-end {
-    justify-content: flex-end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end
 }
 
 .form-item-container .label-text-column-center {
-    justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center
 }
 
 .form-item-container .label-text-row-start {
-    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start
 }
 
 .form-item-container .label-text-row-end {
-    justify-content: flex-end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end
 }
 
 .form-item-container .label-text-row-center {
-    justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center
 }
 
 .form-item-container .label-content {
-    flex: 1;
+    -webkit-flex: 1;
+    flex: 1
 }
 
 .form-item-container .label-text-required::before {
@@ -66,7 +79,7 @@
     content: "*";
     display: inline-block;
     font-family: SimSun,sans-serif;
-    margin-right: 4px;
+    margin-right: 4px
 }
 
 .error-text {
@@ -77,9 +90,9 @@
     padding-left: 24rpx;
     position: absolute;
     text-align: right;
-    top: 100%;
+    top: 100%
 }
 
 .row {
-    display: none!important;
+    display: none!important
 }

@@ -1,9 +1,8 @@
 Object.defineProperty(exports, "__esModule", {
-    value: !0
+  value: !0
 }), exports.default = void 0;
-
 exports.default = Behavior({
-    methods: {
-        doNothing: function() {}
-    }
+  methods: {
+    doNothing: function() {}
+  }
 });

@@ -1,10 +1,13 @@
 .dialog-container {
+    -webkit-align-items: center;
     align-items: center;
     background: #fff;
     border-radius: 12rpx;
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-direction: column;
     flex-direction: column;
-    width: 520rpx;
+    width: 520rpx
 }
 
 .dialog-title {
@@ -14,60 +17,71 @@
     line-height: 44rpx;
     margin-top: 30rpx;
     padding: 0 25rpx;
-    text-align: center;
+    text-align: center
 }
 
 .dialog-content {
+    -webkit-flex-direction: column;
     flex-direction: column;
     font-family: PingFangSC-Regular;
     font-size: 28rpx;
     line-height: 40rpx;
     margin-bottom: 30rpx;
     margin-top: 30rpx;
-    padding: 0 25rpx;
+    padding: 0 25rpx
 }
 
 .dialog-btn-group,.dialog-content {
+    -webkit-align-items: center;
     align-items: center;
-    display: flex;
+    display: -webkit-flex;
+    display: flex
 }
 
 .dialog-btn-group {
+    -webkit-flex-direction: row;
     flex-direction: row;
     height: 80rpx;
+    -webkit-justify-content: space-between;
     justify-content: space-between;
-    width: 100%;
+    width: 100%
 }
 
 .dialog-btn-cancel {
     border-right: 2rpx solid #f3f3f3;
+    -webkit-flex-direction: row;
     flex-direction: row;
-    width: 259rpx;
+    width: 259rpx
 }
 
 .dialog-btn-cancel,.dialog-btn-confirm {
+    -webkit-align-items: center;
     align-items: center;
     border-top: 2rpx solid #f3f3f3;
+    display: -webkit-flex;
     display: flex;
     font-size: 28rpx;
     height: 80rpx;
-    justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center
 }
 
 .dialog-btn-confirm {
     color: #3963bc;
+    -webkit-flex: 1;
     flex: 1;
-    flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row
 }
 
 .active {
-    color: #3683d6;
+    color: #3683d6
 }
 
 .leave {
-    color: #45526b;
+    color: #45526b
 }
 
 .group-hover {
-    opacity: .8;
+    opacity: .8
 }

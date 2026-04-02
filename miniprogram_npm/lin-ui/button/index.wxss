@@ -9,134 +9,141 @@
     opacity: .15;
     position: absolute;
     top: 50%;
+    -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
-    width: 100%;
+    width: 100%
 }
 
 .special-container {
-    display: flex;
+    display: -webkit-flex;
+    display: flex
 }
 
 .l-btn {
+    -webkit-align-items: center;
     align-items: center;
     box-sizing: border-box;
     color: #fff;
+    display: -webkit-inline-flex;
     display: inline-flex;
     font-size: 28rpx;
+    -webkit-justify-content: center;
     justify-content: center;
     padding: 0 12rpx;
     position: relative;
-    white-space: nowrap;
+    white-space: nowrap
 }
 
 .l-btn-img-mini {
     height: 30rpx;
-    width: 30rpx;
+    width: 30rpx
 }
 
 .l-btn-img-medium {
     height: 36rpx;
-    width: 36rpx;
+    width: 36rpx
 }
 
 .l-btn-img-large {
     height: 44rpx;
-    width: 44rpx;
+    width: 44rpx
 }
 
 .l-btn-long {
     border-radius: 0;
     height: 88rpx;
-    width: 100%;
+    width: 100%
 }
 
 .l-btn-medium {
     height: 72rpx;
-    min-width: 180rpx;
+    min-width: 180rpx
 }
 
 .l-btn-large {
     height: 88rpx;
-    min-width: 710rpx;
+    min-width: 710rpx
 }
 
 .l-btn-mini {
     font-size: 24rpx;
     height: 60rpx;
-    min-width: 140rpx;
+    min-width: 140rpx
 }
 
 .l-btn-default {
-    background-color: #3963bc;
+    background-color: #3963bc
 }
 
 .l-btn-success {
-    background-color: #34bfa3;
+    background-color: #34bfa3
 }
 
 .l-btn-warning {
     background-color: #ffe57f;
-    color: #333;
+    color: #333
 }
 
 .l-btn-error {
-    background-color: #f4516c;
+    background-color: #f4516c
 }
 
 .l-btn-square {
-    border-radius: 0;
+    border-radius: 0
 }
 
 .l-btn-semicircle {
-    border-radius: 40rpx;
+    border-radius: 40rpx
 }
 
 .l-btn-large.l-btn-semicircle {
-    border-radius: 48rpx;
+    border-radius: 48rpx
 }
 
 .l-btn-mini.l-btn-semicircle {
-    border-radius: 30rpx;
+    border-radius: 30rpx
 }
 
 .l-btn-circle {
-    border-radius: 8rpx;
+    border-radius: 8rpx
 }
 
 .l-btn-large.l-btn-circle {
-    border-radius: 9.6rpx;
+    border-radius: 9.6rpx
 }
 
 .l-btn-mini.l-btn-circle {
-    border-radius: 6rpx;
+    border-radius: 6rpx
 }
 
 .l-btn-plain {
     background-color: #fff;
     border: 2rpx solid #3963bc;
-    color: #3963bc;
+    color: #3963bc
 }
 
 .l-btn-success.l-btn-plain {
     background-color: #fff;
     border: 2rpx solid #34bfa3;
-    color: #34bfa3;
+    color: #34bfa3
 }
 
 .l-btn-error.l-btn-plain {
     background-color: #fff;
     border: 2rpx solid #f4516c;
-    color: #f4516c;
+    color: #f4516c
 }
 
 .l-btn-warning.l-btn-plain {
     background-color: #fff;
     border: 2rpx solid #ffe57f;
-    color: #ffe57f;
+    color: #ffe57f
 }
 
 .l-btn-loading {
+    -webkit-animation: btn-spin .6s linear;
     animation: btn-spin .6s linear;
+    -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
     background: 0 0;
     border: 4rpx solid #fff;
@@ -146,65 +153,70 @@
     height: 24rpx;
     opacity: .6;
     vertical-align: middle;
-    width: 24rpx;
+    width: 24rpx
 }
 
 .l-btn-loading-default {
     border: 4rpx solid #3963bc;
-    border-left-color: transparent;
+    border-left-color: transparent
 }
 
 .l-btn-loading-success {
     border: 4rpx solid #34bfa3;
-    border-left-color: transparent;
+    border-left-color: transparent
 }
 
 .l-btn-loading-error {
     border: 4rpx solid #f4516c;
-    border-left-color: transparent;
+    border-left-color: transparent
 }
 
 .l-btn-loading-warning {
     border: 4rpx solid #ffe57f;
-    border-left-color: transparent;
+    border-left-color: transparent
 }
 
 .l-btn-disabled {
-    opacity: .8;
+    opacity: .8
 }
 
 .icon {
-    display: flex!important;
+    display: -webkit-flex!important;
+    display: flex!important
 }
 
 .margin-mini {
-    margin-right: 10rpx;
+    margin-right: 10rpx
 }
 
 .margin-medium {
-    margin-right: 18rpx;
+    margin-right: 18rpx
 }
 
 .margin-large,.margin-long {
-    margin-right: 24rpx;
+    margin-right: 24rpx
 }
 
 @-webkit-keyframes btn-spin {
     0% {
-        transform: rotate(0);
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
     }
 
     100% {
-        transform: rotate(1turn);
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn)
     }
 }
 
 @keyframes btn-spin {
     0% {
-        transform: rotate(0);
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
     }
 
     100% {
-        transform: rotate(1turn);
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn)
     }
 }

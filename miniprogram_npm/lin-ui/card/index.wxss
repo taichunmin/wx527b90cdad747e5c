@@ -1,105 +1,118 @@
 .card-container {
     background: #fff;
     box-sizing: border-box;
+    display: -webkit-flex;
     display: flex;
     margin: 0 auto;
-    padding: 30rpx;
+    padding: 30rpx
 }
 
 .card-container-full {
-    width: 100%;
+    width: 100%
 }
 
 .card-container-unfull {
     border-radius: 4px;
     box-shadow: 0 4rpx 20rpx 0 rgba(212,217,223,.5);
-    width: 92%;
+    width: 92%
 }
 
 .card-container-primary-left {
-    flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row
 }
 
 .card-container-primary-right {
-    flex-direction: row-reverse;
+    -webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse
 }
 
 .card-container-avatar,.card-container-cover {
-    flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column
 }
 
 .cover-img-full,.cover-img-unfull {
     height: 260rpx;
-    width: 100%;
+    width: 100%
 }
 
 .card-img-primary {
     height: 240rpx;
     overflow: hidden;
-    width: 240rpx;
+    width: 240rpx
 }
 
 .card-img-primary-left {
-    margin-right: 40rpx;
+    margin-right: 40rpx
 }
 
 .card-img-primary-right {
-    margin-left: 40rpx;
+    margin-left: 40rpx
 }
 
 .card-img-avatar {
     border-radius: 50%;
     height: 60rpx;
     margin-right: 30rpx;
-    width: 60rpx;
+    width: 60rpx
 }
 
 .card-content {
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex: 1;
     flex: 1;
+    -webkit-flex-direction: column;
     flex-direction: column;
-    position: relative;
+    position: relative
 }
 
 .card-title {
     color: #333;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis
 }
 
 .card-title-primary {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     display: -webkit-box;
-    font-size: 32rpx;
+    font-size: 32rpx
 }
 
 .card-title-cover {
     font-size: 30rpx;
-    margin-top: 10rpx;
+    margin-top: 10rpx
 }
 
 .card-title-avatar {
-    font-size: 28rpx;
+    font-size: 28rpx
 }
 
 .card-avatar-top {
     height: 100rpx;
-    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    justify-content: space-between
 }
 
 .card-avatar-left,.card-avatar-top {
+    -webkit-align-items: center;
     align-items: center;
+    display: -webkit-flex;
     display: flex;
-    flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row
 }
 
 .card-avatar {
+    display: -webkit-flex;
     display: flex;
-    flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column
 }
 
 .describe {
     color: #666;
-    font-size: 24rpx;
+    font-size: 24rpx
 }
